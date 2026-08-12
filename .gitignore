@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Logs & temp
+*.log
+.cache/
+tmp/
+scratch/
+
+# Environment / secrets
+# Nothing secret should ever live in this repo (static site, public host),
+# but ignore these anyway so a stray file never gets pushed.
+.env
+.env.*
+*.pem
+secrets.json
+
+# Local dev servers / OS junk
+Thumbs.db
+desktop.ini
+
+# Node is NOT used in this project (no build step, no dependencies).
+# Ignored defensively in case a tool ever drops these here.
+node_modules/
+package-lock.json
