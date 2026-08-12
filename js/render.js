@@ -73,12 +73,15 @@
                (filled ? 'currentColor' : 'none') + '" stroke="currentColor" stroke-width="2"' +
                (filled ? '' : ' opacity="0.55"') + '/>';
       };
-      return '<g stroke="currentColor" stroke-width="1.5" opacity="0.4" stroke-dasharray="4 4">' +
+      // fill="none" is required on every <g> here: an SVG <path> fills with
+      // black by default, which turns these L-shaped connectors into solid
+      // triangles.
+      return '<g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4" stroke-dasharray="4 4">' +
                '<path d="M63 100 H117" /><path d="M143 100 H197" /><path d="M223 100 H257" />' +
              '</g>' +
              node(50, 100, true) + node(130, 100, false) +
              node(210, 100, false) + node(270, 100, true) +
-             '<g stroke="currentColor" stroke-width="1" opacity="0.22">' +
+             '<g fill="none" stroke="currentColor" stroke-width="1" opacity="0.22">' +
                '<path d="M130 87 V40 H240" /><path d="M130 113 V160 H240" />' +
              '</g>' +
              '<rect x="240" y="30" width="34" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>' +
@@ -363,24 +366,9 @@
   }).join(''));
 
   /* ----------------------------------------------------------------------
-     ABOUT
+     ABOUT — intentionally not rendered here. The About page prose and facts
+     are static markup in about.html so the page reads with JS disabled.
      ---------------------------------------------------------------------- */
-
-  (function () {
-    var lede = slot('about-lede');
-    if (lede) lede.textContent = SITE.about.lede;
-
-    fill('about-prose', SITE.about.paragraphs.map(function (p) {
-      return '<p>' + esc(p) + '</p>';
-    }).join(''));
-
-    fill('about-facts', SITE.about.facts.map(function (f) {
-      return '<div class="facts__row">' +
-               '<dt>' + esc(f.k) + '</dt>' +
-               '<dd>' + esc(f.v) + '</dd>' +
-             '</div>';
-    }).join(''));
-  })();
 
   /* ----------------------------------------------------------------------
      BOOK

@@ -315,50 +315,12 @@ const SITE = {
   ],
 
   /* ---------------------------------------------------------------------
-     ABOUT PAGE — first person, short, human.
+     ABOUT PAGE
+     The About prose and the "short version" table are NOT here on purpose.
+     They are static markup in about.html — that page is long-form writing,
+     not a repeated list, and keeping it in HTML means it still reads with
+     JavaScript turned off. Edit about.html directly.
      --------------------------------------------------------------------- */
-  about: {
-    lede: 'I am Nick. I build websites and automation for small businesses ' +
-          'around Northampton, and I am the only person here.',
-    // Each string is a paragraph.
-    paragraphs: [
-      'That is usually the first question people have, so I will answer it up ' +
-      'front: yes, it is just me. No team, no office, no account manager who ' +
-      'forwards your email to someone you have never met.',
-
-      'The reason that works in your favour is math. A real agency has payroll ' +
-      'and a sales team, so their smallest project has to start somewhere north ' +
-      'of five figures. A $900 website is not a small job to them — it is a job ' +
-      'they lose money on, so they say no, politely, and you go back to having ' +
-      'no website. I do not have that floor. I can take the $900 job, do it ' +
-      'properly, and still make a living.',
-
-      'The trade-off is honest and you should know it: I am one person, so I ' +
-      'take a handful of projects at a time and I will tell you if I cannot ' +
-      'start for three weeks. I will not pretend to be bigger than I am to win ' +
-      'the work.',
-
-      'I work with auto shops, electricians, roofers, landscapers, and the kind ' +
-      'of small service businesses that keep the Valley running. Most of them ' +
-      'are excellent at what they do and have a website that suggests otherwise. ' +
-      'That gap is the whole job.',
-
-      'I live in Northampton. If you are within about twenty minutes of me I ' +
-      'will come to you, look at how you actually work, and tell you honestly ' +
-      'whether a website is even the thing you need. Sometimes it is not — ' +
-      'sometimes it is just your Google listing and a booking link, and that is ' +
-      'a much cheaper conversation.'
-    ],
-    // Short "straight answers" list. Keep it honest and specific.
-    facts: [
-      { k: 'Based in',      v: 'Northampton, PA' },
-      { k: 'Serving',       v: 'Lehigh & Northampton County' },
-      { k: 'Team size',     v: 'One. Me.' },
-      { k: 'Built with',    v: 'Hand-written code, no page builders' },
-      { k: 'Typical build', v: '2–3 weeks' },
-      { k: 'Retainers',     v: 'Optional, never required' }
-    ]
-  },
 
   /* ---------------------------------------------------------------------
      BOOK PAGE

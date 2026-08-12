@@ -45,9 +45,16 @@
   --ink-2:        #3a4048;   /* 10.0:1 */
   --muted:        #5a6069;   /*  6.0:1 */
 
-  /* Lines */
-  --line:         #e4e0d9;
-  --line-strong:  #cdc7bd;
+  /* Lines.
+     --line / --line-strong are DECORATIVE hairlines (card edges, rules,
+     dividers). They are exempt from WCAG 1.4.11.
+     --border-control is for anything a user operates — input, select,
+     textarea, ghost button, filter chip. Its boundary is what identifies the
+     control, so it must clear 3:1 against the surface behind it. Don't
+     substitute --line-strong there; it measures 1.7:1. */
+  --line:           #e4e0d9;
+  --line-strong:    #cdc7bd;
+  --border-control: #8a857c;   /* 3.5:1 on --bg */
 
   /* Accent — safety orange. 4.96:1 on --bg, 5.18:1 against white text. */
   --accent:       #c2410c;
@@ -116,8 +123,9 @@
     --ink-2:        #c9cfd6;   /* 11.3:1 */
     --muted:        #98a1ab;   /*  7.1:1 */
 
-    --line:         #262c34;
-    --line-strong:  #3a434e;
+    --line:           #262c34;
+    --line-strong:    #3a434e;
+    --border-control: #6b7683;   /* 3.7:1 on --surface */
 
     --accent:       #fb923c;   /* 8.2:1 on --bg */
     --accent-hover: #fdba74;
@@ -151,8 +159,9 @@
   --ink-2:        #c9cfd6;
   --muted:        #98a1ab;
 
-  --line:         #262c34;
-  --line-strong:  #3a434e;
+  --line:           #262c34;
+  --line-strong:    #3a434e;
+  --border-control: #6b7683;   /* 3.7:1 on --surface */
 
   --accent:       #fb923c;
   --accent-hover: #fdba74;
@@ -268,6 +277,10 @@ h2 { font-size: var(--t-h2); }
 h3 { font-size: var(--t-h3); line-height: 1.2; letter-spacing: -0.015em; }
 
 p { text-wrap: pretty; }
+
+/* Default gap between a section heading and the paragraph after it. h1 is
+   excluded — page/hero titles carry their own margin-bottom. */
+h2 + p, h3 + p { margin-top: var(--s-4); }
 
 .lead {
   font-size: var(--t-lead);
@@ -415,13 +428,13 @@ a:hover { color: var(--accent-hover); }
   width: 2.25rem;
   height: 2.25rem;
   background: transparent;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border-control);
   border-radius: var(--radius);
   color: var(--ink-2);
   cursor: pointer;
   transition: border-color 0.16s var(--ease), color 0.16s var(--ease);
 }
-.theme-toggle:hover { border-color: var(--line-strong); color: var(--ink); }
+.theme-toggle:hover { border-color: var(--ink-2); color: var(--ink); }
 .theme-toggle svg { width: 1.0625rem; height: 1.0625rem; }
 .theme-toggle .icon-sun  { display: none; }
 .theme-toggle .icon-moon { display: block; }
@@ -439,7 +452,7 @@ a:hover { color: var(--accent-hover); }
   gap: var(--s-2);
   padding: var(--s-2) var(--s-3);
   background: transparent;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border-control);
   border-radius: var(--radius);
   color: var(--ink);
   cursor: pointer;
@@ -493,7 +506,7 @@ a:hover { color: var(--accent-hover); }
 .btn--primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .btn--primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--accent-ink); }
 
-.btn--ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.btn--ghost { background: transparent; color: var(--ink); border-color: var(--border-control); }
 .btn--ghost:hover { border-color: var(--ink); color: var(--ink); background: transparent; }
 
 .btn--lg { padding: 1rem 1.75rem; font-size: 1rem; }
@@ -624,13 +637,32 @@ a:hover { color: var(--accent-hover); }
     linear-gradient(to right, var(--line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--line) 1px, transparent 1px);
   background-size: 72px 72px;
-  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 72% 22%, #000 0%, transparent 72%);
-  mask-image: radial-gradient(ellipse 90% 70% at 72% 22%, #000 0%, transparent 72%);
-  opacity: 0.7;
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 74% 30%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse 85% 75% at 74% 30%, #000 0%, transparent 70%);
+  opacity: 1;
   pointer-events: none;
 }
 
 .hero__inner { position: relative; z-index: 1; }
+
+/* Two-column hero on wide screens; figure drops away on narrow ones. */
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-8);
+  align-items: center;
+  margin-bottom: var(--s-8);
+}
+
+@media (min-width: 1040px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+    gap: var(--s-7);
+  }
+  /* The headline shares the row now, so dial the display size back from its
+     full-bleed maximum — otherwise it wraps to six lines. */
+  .hero__title { font-size: clamp(2.5rem, 1rem + 2.9vw, 3.5rem); }
+}
 
 .hero__status {
   display: inline-flex;
@@ -671,7 +703,7 @@ a:hover { color: var(--accent-hover); }
 
 .hero__sub { max-width: 54ch; margin-bottom: var(--s-7); }
 
-.hero__cta { margin-bottom: var(--s-8); }
+.hero__cta { margin-bottom: 0; }
 
 .hero__note {
   font-family: var(--font-mono);
@@ -681,6 +713,166 @@ a:hover { color: var(--accent-hover); }
   margin-top: var(--s-4);
   text-transform: none;
 }
+
+/* --- Hero figure: CSS-drawn phone wireframe with drafting annotations -----
+   Purely decorative (aria-hidden). Below 1040px it's hidden entirely rather
+   than shrunk — a tiny illustration of a tiny phone adds nothing on a phone.
+   -------------------------------------------------------------------------- */
+
+.hero__figure { display: none; }
+
+@media (min-width: 1040px) {
+  .hero__figure {
+    display: block;
+    position: relative;
+    justify-self: stretch;
+    padding: var(--s-7) 0 var(--s-6);
+  }
+}
+
+.device {
+  position: relative;
+  width: 222px;
+  aspect-ratio: 9 / 18;
+  padding: 9px;
+  background: var(--surface);
+  border: 2px solid var(--line-strong);
+  border-radius: 28px;
+  margin-inline: auto;
+}
+
+.device__ear {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--line-strong);
+  z-index: 2;
+}
+
+.device__screen {
+  height: 100%;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 21px;
+  padding: 26px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  overflow: hidden;
+}
+
+.wf__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 4px;
+}
+.wf__logo { width: 38px; height: 9px; border-radius: 2px; background: var(--accent); }
+.wf__menu { display: grid; gap: 2.5px; }
+.wf__menu i { display: block; width: 13px; height: 1.5px; background: var(--muted); }
+
+.wf__block { border-radius: 3px; }
+.wf__h1 { height: 13px; width: 100%; background: var(--ink); opacity: 0.82; }
+.wf__h1.is-short { width: 62%; }
+.wf__line { height: 5px; width: 100%; background: var(--muted); opacity: 0.42; }
+.wf__line.is-short { width: 55%; }
+.wf__line.is-mid   { width: 78%; }
+
+.wf__btn {
+  margin-top: 5px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.wf__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 7px;
+}
+.wf__cards span {
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface-2);
+}
+
+.wf__hr { height: 1px; background: var(--line); margin: 9px 0 4px; }
+.wf__h2 { height: 9px; width: 46%; background: var(--ink); opacity: 0.7; }
+
+/* "Opening hours" style key/value rows */
+.wf__rows { display: grid; gap: 6px; margin-top: 2px; }
+.wf__rows span { display: flex; align-items: center; justify-content: space-between; }
+.wf__rows i { width: 42%; height: 4px; border-radius: 2px; background: var(--muted); opacity: 0.38; }
+.wf__rows b { width: 26%; height: 4px; border-radius: 2px; background: var(--muted); opacity: 0.24; }
+
+.wf__foot {
+  margin-top: auto;
+  height: 22px;
+  border-radius: 3px;
+  border: 1px dashed var(--line-strong);
+}
+
+/* Drafting-style dimension callouts */
+.dim {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.dim--width {
+  left: 12%;
+  right: 12%;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.dim--width i { flex: 1; height: 1px; background: var(--line-strong); }
+
+.dim--speed,
+.dim--tap {
+  padding: 0.25rem 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink-2);
+}
+.dim--speed { top: 5.5rem;  right: 0; }
+.dim--tap   { bottom: 7rem; left: 0; }
+
+/* Hairline leaders from the callouts to the device */
+.dim--speed::before,
+.dim--tap::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 1.4rem;
+  height: 1px;
+  background: var(--line-strong);
+}
+.dim--speed::before { right: 100%; }
+.dim--tap::before   { left: 100%; }
 
 /* Stat strip */
 .stats {
@@ -883,17 +1075,15 @@ a:hover { color: var(--accent-hover); }
   color: var(--ink-2);
   line-height: 1.5;
 }
+/* Checkmark drawn from two borders on a rotated box — a real tick, not an X. */
 .includes li::before {
   content: '';
-  width: 0.875rem;
-  height: 0.875rem;
-  margin-top: 0.3rem;
-  border: 1.5px solid var(--accent);
-  border-radius: 2px;
-  background:
-    linear-gradient(45deg, transparent 45%, var(--accent) 45%, var(--accent) 55%, transparent 55%),
-    linear-gradient(-45deg, transparent 45%, var(--accent) 45%, var(--accent) 55%, transparent 55%);
-  background-size: 100% 100%;
+  width: 0.4375rem;
+  height: 0.75rem;
+  margin: 0.25rem 0 0 0.25rem;
+  border: solid var(--accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
   flex-shrink: 0;
 }
 
@@ -966,7 +1156,7 @@ a:hover { color: var(--accent-hover); }
 .filter {
   padding: var(--s-2) var(--s-4);
   background: transparent;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border-control);
   border-radius: 999px;
   color: var(--ink-2);
   font-family: var(--font-mono);
@@ -976,7 +1166,7 @@ a:hover { color: var(--accent-hover); }
   cursor: pointer;
   transition: all 0.16s var(--ease);
 }
-.filter:hover { border-color: var(--line-strong); color: var(--ink); }
+.filter:hover { border-color: var(--ink-2); color: var(--ink); }
 .filter[aria-pressed='true'] {
   background: var(--accent);
   border-color: var(--accent);
@@ -1069,6 +1259,25 @@ a:hover { color: var(--accent-hover); }
   text-transform: uppercase;
   color: var(--muted);
 }
+
+/* --------------------------------------------------------------------------
+   NOSCRIPT
+   Services and Work render their lists from data/site-content.js, so with JS
+   off those sections are empty. Rather than show a blank page, say so plainly
+   and give a route that works without scripting.
+   -------------------------------------------------------------------------- */
+
+.noscript-note {
+  border: 1px solid var(--accent);
+  border-left-width: 3px;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  padding: var(--s-5);
+  margin-bottom: var(--s-7);
+  max-width: var(--measure);
+}
+.noscript-note p { color: var(--ink); font-size: var(--t-sm); }
+.noscript-note p + p { margin-top: var(--s-3); }
 
 .empty-state {
   padding: var(--s-9) 0;
@@ -1252,7 +1461,7 @@ a:hover { color: var(--accent-hover); }
   width: 100%;
   padding: 0.75rem 0.875rem;
   background: var(--surface);
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--border-control);
   border-radius: var(--radius);
   color: var(--ink);
   font-size: var(--t-body);

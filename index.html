@@ -72,28 +72,72 @@
   <!-- ========================= HERO ========================= -->
   <section class="hero">
     <div class="wrap hero__inner">
-      <p class="hero__status">
-        <span class="hero__dot" aria-hidden="true"></span>
-        Taking new projects
-      </p>
+      <div class="hero__grid">
 
-      <h1 class="hero__title" data-render="hero-title">
-        Websites and automation for Lehigh Valley businesses that <em>do real work.</em>
-      </h1>
+        <div class="hero__content">
+          <p class="hero__status">
+            <span class="hero__dot" aria-hidden="true"></span>
+            Taking new projects
+          </p>
 
-      <p class="lead hero__sub" data-render="hero-sub">
-        I build fast, mobile-first sites and the small automations behind them — online
-        booking, review requests, appointment reminders. One person, local, direct.
-      </p>
+          <h1 class="hero__title" data-render="hero-title">
+            Websites and automation for Lehigh Valley businesses that <em>do real work.</em>
+          </h1>
 
-      <div class="hero__cta">
-        <div class="btn-row">
-          <a class="btn btn--primary btn--lg" href="book.html">
-            Book a 20-minute call <span class="btn__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="btn btn--ghost btn--lg" href="work.html">See the work</a>
+          <p class="lead hero__sub" data-render="hero-sub">
+            I build fast, mobile-first sites and the small automations behind them — online
+            booking, review requests, appointment reminders. One person, local, direct.
+          </p>
+
+          <div class="hero__cta">
+            <div class="btn-row">
+              <a class="btn btn--primary btn--lg" href="book.html">
+                Book a 20-minute call <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="btn btn--ghost btn--lg" href="work.html">See the work</a>
+            </div>
+            <p class="hero__note">Free. No pitch deck. You get a rough price before we hang up.</p>
+          </div>
         </div>
-        <p class="hero__note">Free. No pitch deck. You get a rough price before we hang up.</p>
+
+        <!-- Decorative hero figure: a phone wireframe drawn entirely in CSS, annotated
+             like a technical drawing. Reinforces "mobile-first" and the blueprint
+             direction without a single image. Hidden from assistive tech — it carries
+             no information the copy doesn't already state. -->
+        <div class="hero__figure" aria-hidden="true">
+          <div class="device">
+            <span class="device__ear"></span>
+            <div class="device__screen">
+              <div class="wf wf__topbar">
+                <span class="wf__logo"></span>
+                <span class="wf__menu"><i></i><i></i><i></i></span>
+              </div>
+              <div class="wf__block wf__h1"></div>
+              <div class="wf__block wf__h1 is-short"></div>
+              <div class="wf__block wf__line"></div>
+              <div class="wf__block wf__line is-short"></div>
+              <div class="wf__btn">Call now</div>
+              <div class="wf__cards">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="wf__block wf__line is-mid"></div>
+              <div class="wf__block wf__line is-short"></div>
+              <div class="wf__hr"></div>
+              <div class="wf__block wf__h2"></div>
+              <div class="wf__rows">
+                <span><i></i><b></b></span>
+                <span><i></i><b></b></span>
+                <span><i></i><b></b></span>
+              </div>
+              <div class="wf__foot"></div>
+            </div>
+          </div>
+
+          <span class="dim dim--width"><i></i>390&nbsp;px<i></i></span>
+          <span class="dim dim--speed">1.2s load</span>
+          <span class="dim dim--tap">44px taps</span>
+        </div>
+
       </div>
 
       <div class="stats" data-render="hero-stats"></div>
@@ -111,6 +155,16 @@
           needle for a small local business, and I do all three myself.
         </p>
       </div>
+
+      <noscript>
+        <div class="noscript-note">
+          <p><strong>This section needs JavaScript to list the three services.</strong>
+          Everything else on the site works without it.</p>
+          <p>If you would rather skip all that: I am Nick, I build websites and
+          automation for small businesses around Northampton, PA. Head to the
+          <a href="book.html">booking page</a> and we can just talk.</p>
+        </div>
+      </noscript>
 
       <div class="grid grid--3 reveal-group" data-render="services-cards"></div>
 

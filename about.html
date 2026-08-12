@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Services &amp; pricing — Northampton Web Co.</title>
-<meta name="description" content="Website design and build from $900, business automation from $450, and custom internal tools. Fixed prices, written quotes, no monthly lock-in. Lehigh Valley, PA.">
+<title>About — Northampton Web Co.</title>
+<meta name="description" content="I'm Nick. I build websites and automation for small businesses around Northampton, PA, and I'm the only person here. Here's why that works in your favor.">
 
-<link rel="canonical" href="https://example.com/services.html">
+<link rel="canonical" href="https://example.com/about.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#c2410c">
 
@@ -44,9 +44,9 @@
     <nav class="nav" id="primary-nav" aria-label="Primary">
       <ul class="nav__list">
         <li><a class="nav__link" href="index.html">Home</a></li>
-        <li><a class="nav__link" href="services.html" aria-current="page">Services</a></li>
+        <li><a class="nav__link" href="services.html">Services</a></li>
         <li><a class="nav__link" href="work.html">Work</a></li>
-        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="about.html" aria-current="page">About</a></li>
       </ul>
       <div class="nav__actions">
         <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
@@ -63,42 +63,87 @@
 
   <section class="page-head">
     <div class="wrap">
-      <p class="eyebrow">Services &amp; pricing</p>
-      <h1 class="page-head__title">What I build, and what it costs.</h1>
-      <p class="lead">
-        Real numbers, up front. Every quote is fixed and in writing before any work
-        starts — if the scope doesn’t change, the price doesn’t either.
-      </p>
+      <p class="eyebrow">About</p>
+      <h1 class="page-head__title">One person. That’s the whole pitch.</h1>
     </div>
   </section>
 
-  <div class="wrap">
-    <noscript>
-      <div class="noscript-note" style="margin-top: var(--s-7)">
-        <p><strong>This page needs JavaScript to list each service and its price.</strong>
-        Everything else on the site works without it.</p>
-        <p>The short version: websites from $900, automation from $450, custom tools
-        quoted per job. Head to the <a href="book.html">booking page</a> and we can
-        just talk it through.</p>
+  <section class="section">
+    <div class="wrap about-layout">
+
+      <div class="about-prose reveal">
+        <!-- Monogram stands in for a portrait — no stock photography on this site.
+             Replace with a real photo of Nick when there is one; it will
+             outperform this. -->
+        <div class="monogram" aria-hidden="true">N</div>
+
+        <!-- This prose is deliberately static, not rendered from
+             data/site-content.js. It is written once, it is not a repeated
+             list, and keeping it in the HTML means the About page still
+             reads properly with JavaScript disabled. Edit it right here. -->
+        <p class="lead">
+          I’m Nick. I build websites and automation for small businesses around
+          Northampton, and I’m the only person here.
+        </p>
+
+        <p>
+          That’s usually the first question people have, so I’ll answer it up front:
+          yes, it’s just me. No team, no office, no account manager who forwards your
+          email to someone you’ve never met.
+        </p>
+
+        <p>
+          The reason that works in your favor is math. A real agency has payroll and a
+          sales team, so their smallest project has to start somewhere north of five
+          figures. A $900 website isn’t a small job to them — it’s a job they lose money
+          on, so they say no, politely, and you go back to having no website. I don’t
+          have that floor. I can take the $900 job, do it properly, and still make a
+          living.
+        </p>
+
+        <p>
+          The trade-off is honest and you should know it: I’m one person, so I take a
+          handful of projects at a time, and I’ll tell you if I can’t start for three
+          weeks. I won’t pretend to be bigger than I am to win the work.
+        </p>
+
+        <p>
+          I work with auto shops, electricians, roofers, landscapers, and the kind of
+          small service businesses that keep the Valley running. Most of them are
+          excellent at what they do and have a website that suggests otherwise. That
+          gap is the whole job.
+        </p>
+
+        <p>
+          I live in Northampton. If you’re within about twenty minutes of me I’ll come
+          to you, look at how you actually work, and tell you honestly whether a website
+          is even the thing you need. Sometimes it isn’t — sometimes it’s just your
+          Google listing and a booking link, and that’s a much cheaper conversation.
+        </p>
+
+        <div class="btn-row" style="margin-top: var(--s-7)">
+          <a class="btn btn--primary" href="book.html">
+            Book a 20-minute call <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn--ghost" href="work.html">See the work</a>
+        </div>
       </div>
-    </noscript>
-  </div>
 
-  <div class="wrap" data-render="services-detail"></div>
+      <aside class="facts reveal" aria-labelledby="facts-head">
+        <h2 class="facts__head" id="facts-head">The short version</h2>
+        <dl>
+          <div class="facts__row"><dt>Based in</dt><dd>Northampton, PA</dd></div>
+          <div class="facts__row"><dt>Serving</dt><dd>Lehigh &amp; Northampton County</dd></div>
+          <div class="facts__row"><dt>Team size</dt><dd>One. Me.</dd></div>
+          <div class="facts__row"><dt>Built with</dt><dd>Hand-written code, no page builders</dd></div>
+          <div class="facts__row"><dt>Typical build</dt><dd>2–3 weeks</dd></div>
+          <div class="facts__row"><dt>Retainers</dt><dd>Optional, never required</dd></div>
+        </dl>
+      </aside>
 
-  <!-- ========================== FAQ ========================== -->
-  <section class="section section--alt" aria-labelledby="faq-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Straight answers</p>
-        <h2 id="faq-heading">The questions I get asked most.</h2>
-      </div>
-
-      <div class="faq" data-render="faq"></div>
     </div>
   </section>
 
-  <!-- ========================== CTA ========================== -->
   <section class="section section--tight">
     <div class="wrap">
       <div class="cta-band reveal">
@@ -111,7 +156,6 @@
               <span data-render="cta-button">Book a call</span>
               <span class="btn__arrow" aria-hidden="true">→</span>
             </a>
-            <a class="btn btn--ghost btn--lg" href="work.html">See the work first</a>
           </div>
         </div>
       </div>
