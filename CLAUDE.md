@@ -64,8 +64,12 @@ long-form writing, not a repeated list, and keeping it in `about.html` means
 that page reads fine with JS off. There is deliberately no `SITE.about`.
 
 **Progressive enhancement — and its honest limit.** Nav, headings, hero copy,
-the whole About page, and the contact form markup are in the HTML and work
-with JS disabled. The *lists* (services, projects, FAQ, process) are rendered
+and the whole About page are in the HTML and work with JS disabled. The
+**contact form does not** — it has no `action` and submits via `fetch()` in
+`js/contact.js`, so with JS off it renders but cannot send. If that matters,
+set `action` to the Formspree endpoint and `method="post"`; Formspree will
+then handle the no-JS case with its own redirect page. The *lists*
+(services, projects, FAQ, process) are rendered
 from `site-content.js` and are empty without JS, so Home, Services and Work
 carry a `<noscript>` block that says so and points at the Book page. That's
 the accepted trade-off for the single-source-of-truth requirement — don't
