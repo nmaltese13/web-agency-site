@@ -24,7 +24,7 @@ No install step. No dependencies. If a change requires compiling, it's wrong.
 | **All paths must be relative** (`css/style.css`, not `/css/style.css`) | GitHub Pages project repos serve from `/<repo-name>/`. Root-absolute paths work on localhost and 404 in production. This is the single easiest way to break the deploy. |
 | Booking = Cal.com embed only | No backend to store appointments in. Never build a custom booking form. |
 | Contact form = Formspree (or equivalent) | Must surface real success **and** error states. Never fail silently. |
-| All content lives in `data/site-content.js` | Owner edits copy/prices/projects without touching HTML. |
+| Structured content lives in `data/site-content.js` | Owner edits copy/prices/projects without touching HTML. **Exception:** About-page prose is static in `about.html` — see Architecture. |
 | Max two font families | Performance. Currently Space Grotesk + Inter. |
 | No stock photography | Use type, color, layout, CSS/SVG. Non-negotiable brand rule. |
 | WCAG AA minimum | 4.5:1 normal text, 3:1 large text and UI borders, in **both** themes. |
@@ -59,9 +59,23 @@ Six pages is little enough to maintain by hand. JS injection would flash a
 missing nav on load and leave the site unnavigable with JS off. **If you edit
 the header or footer, edit it in all six files.**
 
-**Progressive enhancement:** every page must be readable and navigable with JS
-disabled. JS renders the *repeated* lists (services, projects) and handles the
-contact form — the core copy and nav are in the HTML.
+**About-page prose is static markup, not rendered from the data file.** It's
+long-form writing, not a repeated list, and keeping it in `about.html` means
+that page reads fine with JS off. There is deliberately no `SITE.about`.
+
+**Progressive enhancement — and its honest limit.** Nav, headings, hero copy,
+the whole About page, and the contact form markup are in the HTML and work
+with JS disabled. The *lists* (services, projects, FAQ, process) are rendered
+from `site-content.js` and are empty without JS, so Home, Services and Work
+carry a `<noscript>` block that says so and points at the Book page. That's
+the accepted trade-off for the single-source-of-truth requirement — don't
+"fix" it by duplicating content into `<noscript>`, and don't quietly delete
+the notices either.
+
+**Contact details are rendered by JS**, with a static fallback in each page's
+footer for the no-JS case. Those fallbacks are a second copy: if you change
+`business.email` or `business.phone`, grep for `data-render="biz-email"` and
+update the six HTML files too.
 
 ## Design direction — "Technical Blueprint"
 
@@ -88,6 +102,16 @@ shops who respect visible craft and distrust slick.
   `@media (prefers-reduced-motion: no-preference)` so reduced-motion users get
   a static site by default, not an animated one that's been patched.
 
+### Border tokens — read before touching a border color
+
+- `--line` / `--line-strong` are **decorative** hairlines: card edges, rules,
+  dividers. Exempt from contrast rules.
+- `--border-control` is for anything the user operates — input, select,
+  textarea, ghost button, filter chip, icon button. Its boundary is what
+  identifies the control, so WCAG 1.4.11 requires **3:1** against the surface
+  behind it. `--line-strong` measures 1.7:1 and **fails**. Using it on a form
+  field is the specific mistake this token exists to prevent.
+
 ### Theme handling
 
 `prefers-color-scheme` drives the default. A manual toggle overrides it by
@@ -106,6 +130,37 @@ defined only inside a media query will break the toggle.
   site whose whole job is establishing trust is both a legal and a credibility
   risk. Where real testimonials don't exist yet, use an honest process/
   guarantee block instead.
+
+## Verifying a change — don't judge it by reading the code
+
+There's no test suite. Look at the pages:
+
+```bash
+python3 -m http.server 8000
+```
+
+Headless Chrome works for screenshots, with two traps worth knowing:
+
+1. **`--window-size` is clamped to a minimum width (~500px)**, so a mobile
+   screenshot taken directly lays out too wide and gets cropped — it looks
+   like a broken overflow when nothing is wrong. Render the page inside a
+   fixed-width `<iframe>` in a scratch harness page instead.
+2. **`--blink-settings=preferredColorScheme` does not work.** Test dark mode
+   by setting `localStorage['nwc-theme'] = 'dark'` from a same-origin scratch
+   page that redirects to the target. Chrome also reuses the default profile
+   between headless runs, so always set the theme *explicitly* rather than
+   relying on its absence — otherwise one run's theme leaks into the next.
+
+Keep scratch harness files out of the repo.
+
+Check contrast numerically rather than by eye; both themes must hold.
+
+## Current status (Aug 2026)
+
+All six pages are built and verified at 390px and 1440px in both themes.
+Nothing is deployed yet. **Before this goes live:** replace every
+`PLACEHOLDER` (see above), and delete the six invented portfolio projects —
+shipping fictional client work is the fastest way to lose a deal.
 
 ## Commit convention
 
