@@ -1,0 +1,20 @@
+# Files in this repo that must NOT be uploaded as public assets.
+#
+# Cloudflare Workers serves this repo's root directory. Anything here is
+# fetchable at https://<site>/<path> by anyone who guesses the name — making
+# the GitHub repo private does nothing about that.
+#
+# CLAUDE.md is the one that matters: it states in plain English that the
+# business name and the prices are invented placeholders. A prospect finding
+# that would be genuinely damaging.
+
+CLAUDE.md
+README.md
+.gitignore
+.nojekyll
+.assetsignore
+wrangler.jsonc
+
+# outreach/ is gitignored so it never reaches Cloudflare at all. Listed here
+# as a second line of defence in case that ever changes.
+outreach/

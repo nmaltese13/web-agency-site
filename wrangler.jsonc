@@ -1,0 +1,17 @@
+{
+  // Cloudflare Workers static-assets config.
+  //
+  // `name` MUST match the existing Worker (web-agency-site) — a different
+  // value here would deploy a second, separate Worker instead of updating
+  // the live one.
+  //
+  // Without this file Cloudflare used its defaults, which returned a blank
+  // body for any URL that doesn't exist. "404-page" makes it serve our own
+  // 404.html instead.
+  "name": "web-agency-site",
+  "compatibility_date": "2026-08-13",
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page"
+  }
+}
