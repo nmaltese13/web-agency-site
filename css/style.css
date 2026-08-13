@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Northampton Web Co. — design system + page styles
+   Northampton Web Company — design system + page styles
    Direction: "Technical Blueprint" — ink on warm paper, safety-orange accent,
    hairline rules instead of shadows, oversized mono section numbers.
 
@@ -363,19 +363,24 @@ a:hover { color: var(--accent-hover); }
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
+/* Geometric mark, not lettering — the brand is spelled out in full beside it
+   rather than abbreviated to initials. */
 .logo__mark {
   display: grid;
   place-items: center;
   width: 2rem;
   height: 2rem;
   background: var(--accent);
-  color: var(--accent-ink);
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
   border-radius: var(--radius);
   flex-shrink: 0;
+}
+.logo__mark svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: none;
+  stroke: var(--accent-ink);
+  stroke-width: 7;
+  stroke-linecap: square;
 }
 .logo:hover { color: var(--accent); }
 

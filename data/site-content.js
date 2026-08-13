@@ -21,10 +21,9 @@ const SITE = {
      static for SEO reasons).
      --------------------------------------------------------------------- */
   business: {
-    name: 'Northampton Web Co.',            // PLACEHOLDER
-    nameShort: 'NWC',                        // PLACEHOLDER — used in the logo mark
+    name: 'Northampton Web Company',        // PLACEHOLDER
     owner: 'Nick',
-    role: 'Web developer & automation builder',
+    role: 'Web developer and automation builder',
     town: 'Northampton, PA',
     region: 'the Lehigh Valley',
 
@@ -58,9 +57,9 @@ const SITE = {
          'local, direct. No agency retainer, no account manager, no runaround.',
     // Short proof points under the hero. Keep to three.
     stats: [
-      { value: 'Under 3s', label: 'Load time target on 4G' },
-      { value: '2–3 wks',  label: 'Typical build, start to live' },
-      { value: '1',        label: 'Person you talk to. Me.' }
+      { value: 'Under 3 seconds', label: 'Load time on a phone, not office wifi' },
+      { value: '2–3 weeks',      label: 'Typical build, start to live' },
+      { value: 'One',            label: 'Person you talk to. Me.' }
     ]
   },
 
@@ -75,7 +74,7 @@ const SITE = {
     {
       id: 'websites',
       num: '01',
-      title: 'Website design & build',
+      title: 'Website design and build',
       // One line, shown on the Home page card.
       teaser: 'A fast, mobile-first site that loads in under three seconds and ' +
               'tells people what you do, where you are, and how to reach you.',
@@ -124,7 +123,7 @@ const SITE = {
         'Automatic review requests after a completed job',
         'Contact form routing — right message, right person, right away',
         'Quote and invoice request intake',
-        'Written handover doc so you can change the wording yourself'
+        'Written handover guide so you can change the wording yourself'
       ],
       priceFrom: '$450',                                        // PLACEHOLDER
       priceNote: 'per workflow, one time. Third-party tool fees (if any) are ' +

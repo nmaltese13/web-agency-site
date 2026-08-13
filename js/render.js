@@ -155,7 +155,8 @@
   var biz = SITE.business;
 
   slots('biz-name').forEach(function (el) { el.textContent = biz.name; });
-  slots('biz-mark').forEach(function (el) { el.textContent = biz.nameShort; });
+  // No biz-mark slot: the logo mark is a geometric SVG in the HTML, not
+  // an abbreviation of the business name.
 
   slots('biz-email').forEach(function (el) {
     el.textContent = biz.email;
