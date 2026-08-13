@@ -159,25 +159,26 @@ Keep scratch harness files out of the repo.
 
 Check contrast numerically rather than by eye; both themes must hold.
 
-## Deployment — this site is LIVE
+## Deployment
 
-**https://jimbob893.github.io/**
+**Repo:** `Jimbob893/web-agency-site` — **private**. Keep it that way. It was
+briefly public as a `<user>.github.io` Pages site; that exposed CLAUDE.md,
+which says in plain English that the business name and prices are invented.
+A prospect finding that would be genuinely damaging. GitHub Pages is gone and
+`jimbob893.github.io` now 404s.
 
-GitHub Pages, user site, served from the **domain root**. Repo:
-`Jimbob893/Jimbob893.github.io`, public, branch `main`, path `/`.
+**Host: Cloudflare Pages** (free tier serves from a *private* repo, which
+GitHub Pages will not do without a paid plan). Build settings: no build
+command, output directory `/`. Deploys on push to `main`.
 
-```bash
-git push origin main   # that's the whole deploy. ~30-60s to go live.
-```
+Because Cloudflare Pages serves from the **domain root**, `404.html`'s
+root-absolute paths stay correct. If the site is ever moved somewhere that
+serves it from a subpath, every leading `/` in `404.html` breaks.
 
-Because it's a *user* site rather than a project repo, there is no
-`/<repo-name>/` subpath, which is why `404.html`'s root-absolute paths are
-correct. **If this ever moves to a project repo, every leading `/` in
-`404.html` breaks** and needs the repo prefix.
-
-`.nojekyll` is present — don't delete it. `robots.txt` and `sitemap.xml` list
-the five real pages; `/demos/` are deliberately crawlable-but-`noindex`
-(a crawler must be allowed to fetch a page to see the noindex tag).
+`.nojekyll` is a leftover from GitHub Pages and is harmless — Cloudflare
+ignores it. `robots.txt` and `sitemap.xml` still contain the old
+`jimbob893.github.io` URLs and **must be updated to the real domain** once
+it exists, along with the `<link rel="canonical">` tag in the five pages.
 
 ### Portfolio: demos, not clients
 
