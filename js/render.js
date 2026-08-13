@@ -315,43 +315,53 @@
         if (cats.indexOf(p.category) === -1) cats.push(p.category);
       });
 
-      filterBar.innerHTML = cats.map(function (c, i) {
-        return '<button type="button" class="filter" data-filter="' + esc(c) + '" ' +
-               'aria-pressed="' + (i === 0 ? 'true' : 'false') + '">' + esc(c) + '</button>';
-      }).join('');
-
-      var empty = document.createElement('p');
-      empty.className = 'empty-state';
-      empty.hidden = true;
-      empty.textContent = 'No projects in that category yet.';
-      workGrid.after(empty);
-
-      var live = document.getElementById('filter-status');
-
-      filterBar.addEventListener('click', function (e) {
-        var btn = e.target.closest('.filter');
-        if (!btn) return;
-
-        var want = btn.getAttribute('data-filter');
-
-        filterBar.querySelectorAll('.filter').forEach(function (b) {
-          b.setAttribute('aria-pressed', String(b === btn));
-        });
-
-        var shown = 0;
-        workGrid.querySelectorAll('.project').forEach(function (card) {
-          var match = want === 'All' || card.getAttribute('data-category') === want;
-          card.hidden = !match;
-          if (match) shown++;
-        });
-
-        empty.hidden = shown > 0;
-        if (live) {
-          live.textContent = shown + (shown === 1 ? ' project' : ' projects') +
-                             ' shown' + (want === 'All' ? '' : ' in ' + want);
-        }
-      });
+      // One category means the only choice is "All" — a filter bar that can't
+      // filter anything is just clutter. Hide it until there's a real choice.
+      // NB: this whole file is an IIFE, so an early `return` here would skip
+      // every later section (FAQ, book, CTA) and the content:rendered event.
+      if (cats.length < 3) filterBar.remove();
+      else buildFilters(filterBar, cats, workGrid);
     }
+  }
+
+  // Declared as a function statement so it hoists above the call site above.
+  function buildFilters(filterBar, cats, workGrid) {
+    filterBar.innerHTML = cats.map(function (c, i) {
+      return '<button type="button" class="filter" data-filter="' + esc(c) + '" ' +
+             'aria-pressed="' + (i === 0 ? 'true' : 'false') + '">' + esc(c) + '</button>';
+    }).join('');
+
+    var empty = document.createElement('p');
+    empty.className = 'empty-state';
+    empty.hidden = true;
+    empty.textContent = 'No projects in that category yet.';
+    workGrid.after(empty);
+
+    var live = document.getElementById('filter-status');
+
+    filterBar.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter');
+      if (!btn) return;
+
+      var want = btn.getAttribute('data-filter');
+
+      filterBar.querySelectorAll('.filter').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+
+      var shown = 0;
+      workGrid.querySelectorAll('.project').forEach(function (card) {
+        var match = want === 'All' || card.getAttribute('data-category') === want;
+        card.hidden = !match;
+        if (match) shown++;
+      });
+
+      empty.hidden = shown > 0;
+      if (live) {
+        live.textContent = shown + (shown === 1 ? ' project' : ' projects') +
+                           ' shown' + (want === 'All' ? '' : ' in ' + want);
+      }
+    });
   }
 
   /* ----------------------------------------------------------------------

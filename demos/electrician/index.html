@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEMO — Vaughn Electric | Lehigh Valley, PA</title>
+<meta name="description" content="Demonstration website. Vaughn Electric is a fictional business used to show a quote-request flow for a residential electrician.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="demo-bar">
+  <strong>DEMO SITE.</strong> Vaughn Electric is a made-up business.
+  Built by Nick to show a quote-request flow for a trades business —
+  <a href="../../work.html">back to the portfolio</a>.
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="bolt" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="#1f2124"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg>
+      </span>
+      <span>
+        <strong>Vaughn Electric</strong>
+        <span>Licensed &amp; insured · PA #PA000000</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#area">Service area</a>
+      <a href="#quote">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>A licensed electrician who calls you back.</h1>
+        <p class="sub">
+          Panel upgrades, EV chargers, rewiring, and the outlet that's been
+          dead since you moved in. Residential work across the Lehigh Valley,
+          quoted in writing before anything starts.
+        </p>
+        <div class="hero__actions">
+          <a class="btn" href="#quote">Get a free quote</a>
+          <a class="btn btn--dark" href="#services">See what I do</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Licensed &amp; insured</span>
+          <span class="badge">Free written quotes</span>
+          <span class="badge">Evening callbacks</span>
+        </div>
+      </div>
+
+      <!-- The point of this demo: capture the job at 9pm without a phone call -->
+      <div class="quote-card">
+        <h2>Tell me about the job</h2>
+        <p>I reply the same day, usually within a few hours.</p>
+        <form onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Demo form — nothing was sent. On a live build this emails the electrician instantly.';">
+          <div class="field">
+            <label for="n">Your name</label>
+            <input id="n" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="p">Phone</label>
+            <input id="p" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="j">What do you need?</label>
+            <select id="j" name="job">
+              <option>Panel upgrade</option>
+              <option>EV charger install</option>
+              <option>Outlets / switches</option>
+              <option>Lighting</option>
+              <option>Something's not working</option>
+              <option>Not sure — need advice</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="d">Anything else?</label>
+            <textarea id="d" name="detail" placeholder="Optional — age of the house, what you've tried, when you're free"></textarea>
+          </div>
+          <button class="btn btn--wide" type="submit">Send request</button>
+          <p class="form-note">No obligation. I'll tell you if it's a job for someone else.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>What I do</h2>
+      <p class="lede">Residential and light commercial. If it's a job that needs a bigger crew, I'll say so and point you somewhere good.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ico" aria-hidden="true">⚡</div>
+          <h3>Panel upgrades</h3>
+          <p>100A to 200A service, fuse box replacements, sub-panels for additions and garages.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">🔌</div>
+          <h3>EV chargers</h3>
+          <p>Level 2 install, load calculation, and the permit paperwork handled.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">🏠</div>
+          <h3>Rewiring &amp; old houses</h3>
+          <p>Knob-and-tube replacement, grounding, aluminum wiring remediation.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">💡</div>
+          <h3>Lighting</h3>
+          <p>Recessed, under-cabinet, outdoor and security lighting, ceiling fans.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">🔍</div>
+          <h3>Troubleshooting</h3>
+          <p>Breakers that trip, outlets that don't, flickering that nobody's been able to find.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">📋</div>
+          <h3>Inspections</h3>
+          <p>Pre-purchase electrical inspection and code-compliance reports.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="section--grey">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="lede">No sales visit, no pressure, no "limited time" anything.</p>
+      <div class="steps">
+        <div class="step"><div><h3>You send the form</h3><p>Takes about a minute. Photos help if something's obviously wrong.</p></div></div>
+        <div class="step"><div><h3>I call you back</h3><p>Same day. We work out whether it's a quick fix or a real job.</p></div></div>
+        <div class="step"><div><h3>You get it in writing</h3><p>A fixed quote by email. It doesn't change unless you change the job.</p></div></div>
+        <div class="step"><div><h3>I do the work</h3><p>Permits pulled where needed, site left clean, and I explain what I did.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area">
+    <div class="wrap">
+      <h2>Where I work</h2>
+      <p class="lede">Lehigh and Northampton County. If you're just outside, ask anyway.</p>
+      <div class="towns">
+        <span class="town">Northampton</span><span class="town">Allentown</span>
+        <span class="town">Bethlehem</span><span class="town">Easton</span>
+        <span class="town">Nazareth</span><span class="town">Bath</span>
+        <span class="town">Whitehall</span><span class="town">Catasauqua</span>
+        <span class="town">Emmaus</span><span class="town">Walnutport</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap">
+      <div class="emergency">
+        <div>
+          <h2>Power out? Burning smell?</h2>
+          <p>Don't fill in a form. Shut the breaker off and call — that's what the number's for.</p>
+        </div>
+        <a class="btn" href="../../book.html">Call (610) 555-0100</a>
+      </div>
+      <p style="margin-top:14px;font-size:14px;color:#5c6169;text-align:center">
+        Demo only — that button goes to Nick's booking page, not a real electrician.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Vaughn Electric · Lehigh Valley, PA · Fictional business</span>
+    <span>A demonstration site built by Nick · <a href="../../index.html">See more</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

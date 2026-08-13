@@ -28,10 +28,17 @@ const SITE = {
     town: 'Northampton, PA',
     region: 'the Lehigh Valley',
 
-    // PLACEHOLDER: replace with the address you actually want published.
-    email: 'hello@example.com',
-    // PLACEHOLDER: replace or set to null to hide the phone link everywhere.
-    phone: '(610) 555-0142',
+    // Your real address, so the live site has a working way to reach you.
+    // Swap this for a business address (nick@yourdomain.com) once you own a
+    // domain — it reads better on a quote than a gmail.
+    email: 'nmalt0826@gmail.com',
+
+    // Deliberately null. A published phone number has to be a real one you
+    // will actually answer, and I am not going to invent one — a fake number
+    // in your signature is the fastest way to lose a first contact. Set it to
+    // a real string and the phone link reappears everywhere automatically:
+    //   phone: '(610) 555-0100',   // <- your real, answered number
+    phone: null,
 
     // Towns listed in the footer. Helps local search. Add/remove freely.
     serviceArea: [
@@ -190,95 +197,68 @@ const SITE = {
      PORTFOLIO / WORK
      Add a project by appending an object here. Nothing else to edit.
 
-     >>> PLACEHOLDER: ALL SIX PROJECTS BELOW ARE INVENTED. <<<
-     They exist so the layout can be judged. Delete every one you have not
-     actually built before this site goes live — shipping fictional client
-     work is the fastest way to lose a deal.
+     Everything below is REAL and honest: two demo builds that actually exist
+     in demos/, and this site itself. The demos are clearly labelled as
+     fictional businesses on the pages themselves, not just here.
+
+     >>> Never add a project you did not build. Never invent a client name,
+     >>> and never invent an outcome ("calls up 40%"). A prospect can check,
+     >>> and getting caught costs you far more than an empty portfolio does.
+     >>> As real jobs land, add them and drop the demos down the list.
 
      Fields:
-       title     — project or client name
-       category  — 'Website' | 'Automation' | 'Custom tool'  (drives filters)
+       title     — project name
+       category  — drives the filter buttons. Keep the vocabulary small.
        year      — string
        summary   — one or two sentences
-       result    — the outcome line, shown in mono. Keep it concrete.
+       result    — a FACT, shown in mono. Measured, not claimed.
        tags      — array of short strings
-       url       — live link, or null for no link
+       url       — relative link, or null
        accent    — 'orange' | 'blue' | 'green' | 'violet' | 'clay' | 'slate'
        pattern   — 'grid' | 'flow' | 'stack' | 'arc' | 'bars' | 'pulse'
                    (drives the generated SVG cover — there are no photos)
      --------------------------------------------------------------------- */
   projects: [
     {
-      title: 'Keller Auto & Tire',                              // PLACEHOLDER
-      category: 'Website',
+      title: 'Ridge Road Auto Service',
+      category: 'Demo build',
       year: '2026',
-      summary: 'Five-page site for a two-bay repair shop that had been running ' +
-               'on a Facebook page. Built around the two things people search ' +
-               'for: hours and a phone number.',
-      result: 'Calls from search up, no more "are you still open?" messages',
-      tags: ['5 pages', 'Click-to-call', 'Google Business'],
-      url: null,
+      summary: 'A one-page site for an independent repair shop: hours, phone, ' +
+               'services, directions. Built around the two things people ' +
+               'actually search for on a phone — are you open, and what is ' +
+               'the number.',
+      result: 'Whole page is 16 KB. No framework, no page builder.',
+      tags: ['One page', 'Click-to-call', 'Sticky mobile CTA'],
+      url: 'demos/auto-shop/',
       accent: 'orange',
       pattern: 'grid'
     },
     {
-      title: 'Beers Electric',                                  // PLACEHOLDER
-      category: 'Automation',
+      title: 'Vaughn Electric',
+      category: 'Demo build',
       year: '2026',
-      summary: 'Booking page plus automatic text reminders for a residential ' +
-               'electrician who was losing an appointment a week to no-shows.',
-      result: 'No-shows down from ~4 a month to under 1',
-      tags: ['Cal.com', 'SMS reminders', 'Calendar sync'],
-      url: null,
+      summary: 'A quote-request flow for a residential electrician. The form ' +
+               'sits in the hero rather than buried on a contact page, because ' +
+               'people look for a tradesman at nine at night and will not hunt ' +
+               'for it.',
+      result: 'Whole page is 14 KB. Quote form above the fold.',
+      tags: ['Quote capture', 'Service area', 'Trades'],
+      url: 'demos/electrician/',
       accent: 'blue',
-      pattern: 'pulse'
-    },
-    {
-      title: 'Lehigh Gutter Works',                             // PLACEHOLDER
-      category: 'Website',
-      year: '2025',
-      summary: 'Rebuild of a site last touched in 2013. Same content, ' +
-               'restructured so it works on a phone and loads on job-site data.',
-      result: '11s → 1.4s load on mobile',
-      tags: ['Rebuild', 'Mobile-first', 'No CMS fees'],
-      url: null,
-      accent: 'green',
-      pattern: 'arc'
-    },
-    {
-      title: 'Fogel & Sons Landscaping',                        // PLACEHOLDER
-      category: 'Custom tool',
-      year: '2025',
-      summary: 'Quote calculator the crew uses on a phone in the truck. Enter ' +
-               'square footage and material, get a number and a printable quote.',
-      result: 'Quotes out same-day instead of same-week',
-      tags: ['Internal app', 'Offline-capable', 'PDF export'],
-      url: null,
-      accent: 'clay',
-      pattern: 'bars'
-    },
-    {
-      title: 'Nazareth Dental Arts',                            // PLACEHOLDER
-      category: 'Automation',
-      year: '2025',
-      summary: 'Automated review requests sent the day after an appointment, ' +
-               'with the wording the office manager wrote herself.',
-      result: '9 Google reviews → 74 in five months',
-      tags: ['Review flow', 'Email + SMS', 'Handover doc'],
-      url: null,
-      accent: 'violet',
       pattern: 'flow'
     },
     {
-      title: 'Coplay Collision',                                // PLACEHOLDER
-      category: 'Custom tool',
-      year: '2024',
-      summary: 'Job board that replaced a whiteboard. Every car in the shop, ' +
-               'what stage it is at, and who is waiting on a part.',
-      result: 'Whiteboard retired; status calls dropped off',
-      tags: ['Job tracking', 'Shop-floor tablet', 'CSV export'],
+      title: 'This website',
+      category: 'Live site',
+      year: '2026',
+      summary: 'The site you are on. Hand-written HTML, CSS and vanilla JS — ' +
+               'no build step, no dependencies, no npm. Light and dark themes, ' +
+               'keyboard navigable, and every colour checked for contrast in ' +
+               'both. If you want to see how I work, read the source.',
+      result: 'WCAG AA in both themes. Zero dependencies.',
+      tags: ['Design system', 'Dark mode', 'Accessible'],
       url: null,
-      accent: 'slate',
+      accent: 'green',
       pattern: 'stack'
     }
   ],

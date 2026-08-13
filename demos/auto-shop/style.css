@@ -1,0 +1,232 @@
+/* ==========================================================================
+   DEMO — Ridge Road Auto Service
+   Deliberately does NOT reuse the agency design system. A client site must
+   look like the client, not like me. Own palette, own type, own everything.
+
+   This is what a ~$900 single-page build looks like: one file of CSS, no
+   framework, no page builder.
+   ========================================================================== */
+
+:root {
+  --navy:      #10233a;
+  --navy-2:    #1b3855;
+  --steel:     #4a5f78;
+  --paper:     #f7f6f3;
+  --white:     #ffffff;
+  --line:      #dcd9d2;
+  --red:       #b3241d;   /* 6.0:1 on --paper */
+  --red-dark:  #8d1b16;
+  --ink:       #16202c;
+  --muted:     #55606e;   /* 6.3:1 on --paper */
+  --ok:        #1c6b3a;
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --cond: "Arial Narrow", "Helvetica Neue Condensed", system-ui, sans-serif;
+
+  --wrap: 1100px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: var(--red); }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: 20px; }
+
+h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.5rem); margin-bottom: 12px; }
+h3 { font-size: 1.25rem; margin-bottom: 8px; }
+
+/* ---------- Demo ribbon: this must never be mistaken for a real business -- */
+.demo-bar {
+  background: #1d1d1f;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 20px;
+  line-height: 1.4;
+}
+.demo-bar strong { color: #ffb020; }
+.demo-bar a { color: #fff; }
+
+/* ---------- Top call bar — the single most important element ------------- */
+.callbar {
+  background: var(--navy);
+  color: #fff;
+  padding: 10px 0;
+  font-size: 15px;
+}
+.callbar .wrap {
+  display: flex; flex-wrap: wrap; gap: 6px 20px;
+  align-items: center; justify-content: space-between;
+}
+.callbar a { color: #fff; font-weight: 700; text-decoration: none; }
+.callbar a:hover { text-decoration: underline; }
+.open-now { display: inline-flex; align-items: center; gap: 7px; }
+.open-dot { width: 9px; height: 9px; border-radius: 50%; background: #46d17f; }
+
+/* ---------- Header ------------------------------------------------------- */
+header.site { background: var(--white); border-bottom: 1px solid var(--line); }
+header.site .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding-block: 14px;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand__mark {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: var(--red); color: #fff;
+  display: grid; place-items: center;
+  font-family: var(--cond); font-weight: 700; font-size: 19px;
+  letter-spacing: 0.02em;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+}
+.brand__name { font-family: var(--cond); font-weight: 700; font-size: 21px; letter-spacing: 0.01em; text-transform: uppercase; }
+.brand__sub { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+
+nav.main { display: flex; gap: 4px; }
+nav.main a {
+  padding: 8px 12px; text-decoration: none; color: var(--ink);
+  font-weight: 600; font-size: 15px; border-radius: 4px;
+}
+nav.main a:hover { background: var(--paper); }
+@media (max-width: 720px) { nav.main { display: none; } }
+
+.btn {
+  display: inline-block; padding: 14px 22px;
+  background: var(--red); color: #fff;
+  font-weight: 700; font-size: 16px; text-decoration: none;
+  border: 0; border-radius: 4px; cursor: pointer;
+  min-height: 48px;                 /* thumb-sized tap target */
+}
+.btn:hover { background: var(--red-dark); }
+.btn--big { font-size: 19px; padding: 17px 28px; width: 100%; text-align: center; }
+.btn--ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+.btn--ghost:hover { background: var(--navy); color: #fff; }
+
+/* ---------- Hero --------------------------------------------------------- */
+.hero { background: var(--navy); color: #fff; padding-block: clamp(40px, 6vw, 76px); }
+.hero h1 {
+  font-family: var(--cond); text-transform: uppercase;
+  font-size: clamp(2.25rem, 1.2rem + 4.6vw, 4rem);
+  margin-bottom: 16px; max-width: 16ch;
+}
+.hero p { font-size: clamp(1.0625rem, 1rem + 0.5vw, 1.25rem); color: #c8d4e2; max-width: 48ch; margin-bottom: 28px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__actions .btn { width: auto; }
+@media (max-width: 560px) { .hero__actions .btn { width: 100%; text-align: center; } }
+
+.trustline {
+  margin-top: 32px; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  display: flex; flex-wrap: wrap; gap: 12px 40px;
+  font-size: 15px; color: #c8d4e2;
+}
+.trustline b { color: #fff; }
+
+.hero__grid {
+  display: grid; grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(28px, 4vw, 56px); align-items: start;
+}
+@media (max-width: 900px) { .hero__grid { grid-template-columns: 1fr; } }
+
+/* Hours + address card — what a phone visitor actually came for */
+.hero__card {
+  background: var(--white); color: var(--ink);
+  border-radius: 6px; padding: 24px;
+  border-top: 5px solid var(--red);
+}
+/* These need `.hero` in the selector to outrank `.hero p { color: #c8d4e2 }`
+   above — that pale colour is for text on the navy background and turns
+   unreadable inside this white card. */
+.hero .hero__card-status {
+  display: flex; align-items: center; gap: 8px;
+  font-weight: 700; color: var(--ok); font-size: 15px; margin-bottom: 14px;
+}
+.hours--mini th, .hours--mini td { padding: 8px 0; font-size: 15.5px; }
+.hours--mini tr:last-child th, .hours--mini tr:last-child td { border-bottom: 0; }
+.hero .hero__card-addr { margin: 16px 0 18px; line-height: 1.6; font-size: 15.5px; color: var(--muted); }
+.hero .hero__card-note { margin-top: 12px; font-size: 14px; color: var(--muted); text-align: center; }
+
+/* ---------- Sections ----------------------------------------------------- */
+section { padding-block: clamp(44px, 5vw, 72px); }
+.section--white { background: var(--white); }
+.lede { color: var(--muted); max-width: 60ch; margin-bottom: 32px; }
+
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 860px) { .services { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .services { grid-template-columns: 1fr; } }
+
+.svc {
+  background: var(--white); border: 1px solid var(--line);
+  border-top: 4px solid var(--red);
+  border-radius: 4px; padding: 22px;
+}
+.section--white .svc { background: var(--paper); }
+.svc p { color: var(--muted); font-size: 15.5px; }
+.svc ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 15.5px; }
+.svc li { margin-bottom: 4px; }
+
+/* ---------- Hours + location -------------------------------------------- */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+@media (max-width: 780px) { .two-col { grid-template-columns: 1fr; } }
+
+table.hours { width: 100%; border-collapse: collapse; }
+table.hours th, table.hours td { text-align: left; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+table.hours th { font-weight: 600; }
+table.hours td { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+table.hours tr.today th, table.hours tr.today td { color: var(--ink); font-weight: 700; }
+table.hours tr.today td::after { content: " · today"; color: var(--ok); font-weight: 600; }
+
+.addr { font-style: normal; line-height: 1.8; }
+.map-note {
+  margin-top: 16px; padding: 16px; background: var(--paper);
+  border: 1px solid var(--line); border-radius: 4px; font-size: 15px; color: var(--muted);
+}
+.section--white .map-note { background: var(--white); }
+
+/* ---------- Review strip — clearly marked as sample copy ----------------- */
+.reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 860px) { .reviews { grid-template-columns: 1fr; } }
+.review { background: var(--white); border: 1px solid var(--line); border-radius: 4px; padding: 20px; }
+.section--white .review { background: var(--paper); }
+.stars { color: #c8850c; letter-spacing: 2px; margin-bottom: 8px; }
+.review p { font-size: 15.5px; }
+.review cite { display: block; margin-top: 10px; font-style: normal; font-size: 14px; color: var(--muted); }
+
+/* ---------- Final CTA ---------------------------------------------------- */
+.cta { background: var(--red); color: #fff; text-align: center; }
+.cta h2 { margin-bottom: 10px; }
+.cta p { color: #ffe3e1; margin-bottom: 24px; }
+.cta .btn { background: #fff; color: var(--red); }
+.cta .btn:hover { background: var(--paper); }
+
+/* ---------- Footer ------------------------------------------------------- */
+footer.site { background: var(--navy); color: #a9bacd; padding-block: 32px; font-size: 15px; }
+footer.site a { color: #fff; }
+footer.site .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+
+/* ---------- Sticky mobile call button ------------------------------------ */
+.sticky-call { display: none; }
+@media (max-width: 720px) {
+  .sticky-call {
+    display: block; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50;
+    background: var(--red); color: #fff; text-align: center;
+    padding: 16px; border-radius: 6px; font-weight: 700; font-size: 18px;
+    text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+  }
+  body { padding-bottom: 84px; }
+}

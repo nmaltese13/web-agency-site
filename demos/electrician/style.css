@@ -1,0 +1,153 @@
+/* ==========================================================================
+   DEMO — Vaughn Electric
+   Second demo, deliberately a different visual language from the auto shop:
+   light, airy, yellow/charcoal, rounded, lots of white space. Two demos that
+   look the same prove I own one template. Two that don't prove I can design.
+   ========================================================================== */
+
+:root {
+  --char:    #1f2124;
+  --char-2:  #3d4147;
+  --grey:    #5c6169;   /* 5.9:1 on --bg */
+  --bg:      #ffffff;
+  --bg-2:    #f6f6f4;
+  --line:    #e3e2de;
+  --amber:   #f5b625;
+  --amber-d: #d99a08;
+  --link:    #8a5a00;   /* amber is unreadable as text; this is 5.4:1 on white */
+  --ok:      #1a7a45;
+
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --wrap: 1060px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  font-family: var(--font);
+  font-size: 17px; line-height: 1.65;
+  color: var(--char); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: var(--link); }
+:focus-visible { outline: 3px solid var(--char); outline-offset: 2px; }
+
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: 20px; }
+
+h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.7rem, 1.3rem + 1.8vw, 2.35rem); margin-bottom: 14px; }
+h3 { font-size: 1.15rem; margin-bottom: 6px; }
+p { text-wrap: pretty; }
+
+.demo-bar {
+  background: #1f2124; color: #fff; font-size: 14px;
+  text-align: center; padding: 10px 20px; line-height: 1.45;
+}
+.demo-bar strong { color: var(--amber); }
+.demo-bar a { color: #fff; }
+
+/* ---------- Header ------------------------------------------------------- */
+header.site { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 20; }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--char); }
+.bolt {
+  width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+  background: var(--amber); display: grid; place-items: center;
+}
+.bolt svg { width: 19px; height: 19px; }
+.brand strong { font-size: 19px; letter-spacing: -0.02em; }
+.brand span { display: block; font-size: 12.5px; color: var(--grey); letter-spacing: 0.01em; }
+
+nav.main { display: flex; gap: 2px; }
+nav.main a { padding: 9px 13px; border-radius: 8px; text-decoration: none; color: var(--char-2); font-weight: 600; font-size: 15px; }
+nav.main a:hover { background: var(--bg-2); color: var(--char); }
+@media (max-width: 780px) { nav.main { display: none; } }
+
+.btn {
+  display: inline-block; padding: 13px 22px; min-height: 48px;
+  background: var(--amber); color: var(--char);
+  font-weight: 700; font-size: 16px; text-decoration: none;
+  border: 0; border-radius: 9px; cursor: pointer;
+}
+.btn:hover { background: var(--amber-d); color: var(--char); }
+.btn--dark { background: var(--char); color: #fff; }
+.btn--dark:hover { background: #000; color: #fff; }
+.btn--wide { width: 100%; text-align: center; }
+
+/* ---------- Hero --------------------------------------------------------- */
+.hero { padding-block: clamp(44px, 6vw, 84px); background: var(--bg-2); }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+@media (max-width: 880px) { .hero .wrap { grid-template-columns: 1fr; } }
+
+.hero h1 { font-size: clamp(2.1rem, 1.3rem + 3.4vw, 3.35rem); margin-bottom: 16px; max-width: 15ch; }
+.hero .sub { font-size: clamp(1.05rem, 1rem + 0.4vw, 1.2rem); color: var(--char-2); max-width: 46ch; margin-bottom: 26px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 11px; }
+@media (max-width: 520px) { .hero__actions .btn { width: 100%; text-align: center; } }
+
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.badge {
+  background: #fff; border: 1px solid var(--line); border-radius: 999px;
+  padding: 7px 14px; font-size: 14px; font-weight: 600; color: var(--char-2);
+}
+
+/* Quote card — the conversion element */
+.quote-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+.quote-card h2 { font-size: 1.3rem; margin-bottom: 4px; }
+.quote-card > p { font-size: 15px; color: var(--grey); margin-bottom: 18px; }
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 5px; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 12px 13px; font: inherit; font-size: 16px;
+  border: 1.5px solid #9a9d9f;      /* 3.1:1 — control borders must be visible */
+  border-radius: 9px; background: #fff; color: var(--char);
+}
+.field textarea { min-height: 90px; resize: vertical; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { border-color: var(--char); }
+.form-note { font-size: 13.5px; color: var(--grey); margin-top: 10px; text-align: center; }
+
+/* ---------- Sections ----------------------------------------------------- */
+section { padding-block: clamp(44px, 5vw, 76px); }
+.section--grey { background: var(--bg-2); }
+.lede { color: var(--grey); max-width: 58ch; margin-bottom: 34px; }
+
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 860px) { .grid3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid3 { grid-template-columns: 1fr; } }
+
+.card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+.section--grey .card { background: #fff; }
+.card p { color: var(--grey); font-size: 15.5px; }
+.card .ico {
+  width: 38px; height: 38px; border-radius: 10px; background: var(--bg-2);
+  display: grid; place-items: center; margin-bottom: 13px; font-size: 19px;
+}
+
+/* Emergency strip */
+.emergency {
+  background: var(--char); color: #fff; border-radius: 16px;
+  padding: clamp(24px, 3vw, 38px);
+  display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between;
+}
+.emergency h2 { margin-bottom: 6px; }
+.emergency p { color: #c3c6ca; max-width: 46ch; }
+
+/* Steps */
+.steps { counter-reset: s; display: grid; gap: 18px; }
+.step { display: grid; grid-template-columns: 42px 1fr; gap: 16px; align-items: start; counter-increment: s; }
+.step::before {
+  content: counter(s); width: 42px; height: 42px; border-radius: 50%;
+  background: var(--amber); color: var(--char);
+  display: grid; place-items: center; font-weight: 700; font-size: 17px;
+}
+.step p { color: var(--grey); font-size: 15.5px; }
+
+/* Service area */
+.towns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.town { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 7px 13px; font-size: 14.5px; color: var(--char-2); }
+
+footer.site { border-top: 1px solid var(--line); padding-block: 30px; font-size: 15px; color: var(--grey); }
+footer.site .wrap { display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: space-between; }

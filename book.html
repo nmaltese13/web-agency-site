@@ -81,24 +81,29 @@
         <h2>What we’ll cover</h2>
         <ol class="book-aside__list" data-render="book-expect"></ol>
 
-        <p class="hero__note" style="margin-top: var(--s-6)">
-          Prefer the phone? Call <a href="#" data-render="biz-phone">(610) 555-0142</a>.
-          If I’m on a job I’ll ring back the same day.
-        </p>
       </aside>
 
       <!-- ---------------- Right: Cal.com embed ---------------- -->
       <div class="reveal">
         <div class="cal-embed" id="cal-embed">
-          <!-- Replaced with the live embed once CAL_LINK is set below. -->
+          <!-- This card is what VISITORS see until CAL_LINK is set at the bottom
+               of this file. Keep it written for them, not for me — it is public
+               the moment the site is live. -->
           <div class="cal-placeholder">
-            <p class="eyebrow" style="justify-content:center">Scheduler not connected</p>
-            <h2>Add your Cal.com link</h2>
-            <p class="muted" style="max-width:40ch">
-              Open <code>book.html</code>, find <code>CAL_LINK</code> near the bottom,
-              and paste your booking link. The scheduler appears here automatically.
+            <p class="eyebrow" style="justify-content:center">Self-serve booking</p>
+            <h2>Not wired up yet</h2>
+            <p class="muted" style="max-width:42ch">
+              The click-a-time calendar is being set up this week. Until it’s live,
+              send me a message and I’ll reply with two or three times that work —
+              usually within a few hours.
             </p>
-            <span class="cal-placeholder__code">const CAL_LINK = 'your-name/20min';</span>
+            <a class="btn btn--primary" href="#contact">
+              Send a message instead <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <p class="muted" style="font-size:0.875rem">
+              Or email me directly at
+              <a href="#" data-render="biz-email">nmalt0826@gmail.com</a>
+            </p>
           </div>
         </div>
       </div>
@@ -120,7 +125,7 @@
           </p>
           <p class="hero__note" style="margin-top: var(--s-5)">
             You can also email me directly:
-            <a href="#" data-render="biz-email">hello@example.com</a>
+            <a href="#" data-render="biz-email">nmalt0826@gmail.com</a>
           </p>
         </div>
 
@@ -244,8 +249,10 @@
       <div>
         <h2 class="footer__head">Contact</h2>
         <ul class="footer__list">
-          <li><a href="#" data-render="biz-email">hello@example.com</a></li>
-          <li><a href="#" data-render="biz-phone">(610) 555-0142</a></li>
+          <li><a href="#" data-render="biz-email">nmalt0826@gmail.com</a></li>
+          <!-- No phone published yet. To add one: set business.phone in
+               data/site-content.js AND restore this line in all six pages —
+               <li><a href="#" data-render="biz-phone">YOUR NUMBER</a></li> -->
           <li><a href="book.html">Book a 20-min call</a></li>
         </ul>
       </div>
