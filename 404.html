@@ -9,10 +9,13 @@
 <meta name="robots" content="noindex">
 
 <!-- Root-relative paths here on purpose. GitHub Pages serves this file for
-     ANY missing path, including deep ones like /some/made/up/path — relative
-     paths would break the CSS in that case. If this site is ever deployed to
-     a project subpath (username.github.io/repo/), change the two leading
-     slashes below to /repo/. Every other page uses relative paths. -->
+     ANY missing path, including deep ones like /some/made/up/path, where
+     relative paths would resolve wrongly and the page would load unstyled.
+
+     This works because the site is deployed as a USER site
+     (Jimbob893.github.io) and therefore lives at the domain root. If it is
+     ever moved to a PROJECT repo, it will be served from /<repo-name>/ and
+     every leading slash below must gain that prefix. -->
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#c2410c">
 
