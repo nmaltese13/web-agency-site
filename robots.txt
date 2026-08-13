@@ -1,0 +1,10 @@
+# https://jimbob893.github.io/
+User-agent: *
+Allow: /
+
+# The /demos/ pages are deliberately NOT disallowed here. They carry
+# <meta name="robots" content="noindex">, and a crawler has to be allowed to
+# fetch a page in order to see that tag. Blocking them in robots.txt instead
+# would risk them being indexed as bare URLs with no content.
+
+Sitemap: https://jimbob893.github.io/sitemap.xml
