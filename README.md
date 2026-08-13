@@ -14,6 +14,8 @@ python3 -m http.server 8000
 
 Then open http://localhost:8000
 
+Live at **https://jimbob893.github.io/** — `git push origin main` deploys.
+
 ## Status
 
 Scaffolding. See `CLAUDE.md` for tech constraints and design direction.

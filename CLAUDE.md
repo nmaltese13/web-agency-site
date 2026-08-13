@@ -159,12 +159,56 @@ Keep scratch harness files out of the repo.
 
 Check contrast numerically rather than by eye; both themes must hold.
 
-## Current status (Aug 2026)
+## Deployment — this site is LIVE
 
-All six pages are built and verified at 390px and 1440px in both themes.
-Nothing is deployed yet. **Before this goes live:** replace every
-`PLACEHOLDER` (see above), and delete the six invented portfolio projects —
-shipping fictional client work is the fastest way to lose a deal.
+**https://jimbob893.github.io/**
+
+GitHub Pages, user site, served from the **domain root**. Repo:
+`Jimbob893/Jimbob893.github.io`, public, branch `main`, path `/`.
+
+```bash
+git push origin main   # that's the whole deploy. ~30-60s to go live.
+```
+
+Because it's a *user* site rather than a project repo, there is no
+`/<repo-name>/` subpath, which is why `404.html`'s root-absolute paths are
+correct. **If this ever moves to a project repo, every leading `/` in
+`404.html` breaks** and needs the repo prefix.
+
+`.nojekyll` is present — don't delete it. `robots.txt` and `sitemap.xml` list
+the five real pages; `/demos/` are deliberately crawlable-but-`noindex`
+(a crawler must be allowed to fetch a page to see the noindex tag).
+
+### Portfolio: demos, not clients
+
+`demos/auto-shop/` and `demos/electrician/` are **real work, fictional
+businesses.** Each has its own CSS and its own visual language on purpose — a
+client site must not look like this agency brand, and two demos sharing a
+template would prove only that we own a template. Both carry a black "DEMO
+SITE" ribbon on the page itself and `noindex`.
+
+**Never add a project to `SITE.projects` that wasn't actually built, and never
+invent an outcome line.** `result` must be a measured fact (page weight), not
+a claim like "calls up 40%". As real jobs land, add them and push the demos
+down the list.
+
+## Current status (13 Aug 2026)
+
+Live, verified over HTTPS, all pages and assets 200, custom 404 working.
+Contact email is real; `business.phone` is `null` on purpose — no fake number
+anywhere in the repo.
+
+Still open, and only Nick can close these:
+- **Cal.com link** → `book.html`. Until set, the page honestly says booking
+  isn't wired up yet and points at the contact form.
+- **Formspree endpoint** → `js/contact.js`. Until set, the form shows a
+  truthful error and tells people to email. It never fake-succeeds.
+- **Business name** — "Northampton Web Co." is invented.
+- **Prices** — $900 / $450 / $1,200 are invented.
+- **Phone** — none published.
+
+Cold-outreach drafts and the prospect list live in `outreach/`, which is
+**gitignored and must stay that way** — this repo is public.
 
 ## Commit convention
 
