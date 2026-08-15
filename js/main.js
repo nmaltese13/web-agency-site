@@ -15,7 +15,7 @@
      <head> (before paint, to avoid a flash). This only wires the toggle.
      ---------------------------------------------------------------------- */
 
-  var STORAGE_KEY = 'nwc-theme';
+  var STORAGE_KEY = 'maltese-theme';
   var root = document.documentElement;
 
   function systemPrefersDark() {

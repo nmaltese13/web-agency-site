@@ -1,6 +1,7 @@
 # CLAUDE.md
 
-Marketing site for a one-person web development & automation business serving
+Marketing site for **Maltese Web Works** — a one-person web development and
+automation business serving
 small local businesses in the Lehigh Valley, PA. This site is the owner's
 primary sales asset — prospects judge his work by it. It must look better than
 the sites of the businesses being pitched.
@@ -33,7 +34,7 @@ No install step. No dependencies. If a change requires compiling, it's wrong.
 
 Search the codebase for `PLACEHOLDER` — every invented value is tagged.
 
-- `data/site-content.js` → business name, prices, all portfolio projects, contact email/phone
+- `data/site-content.js` → **prices only** (the name, email and projects are now real)
 - `book.html` → Cal.com scheduling link
 - `js/contact.js` → Formspree endpoint
 
@@ -161,6 +162,8 @@ Check contrast numerically rather than by eye; both themes must hold.
 
 ## Deployment
 
+**Live at** `https://web-agency-site.nmalt0826.workers.dev`
+
 **Repo:** `Jimbob893/web-agency-site` — **private**. Keep it that way. It was
 briefly public as a `<user>.github.io` Pages site; that exposed CLAUDE.md,
 which says in plain English that the business name and prices are invented.
@@ -175,10 +178,17 @@ Because Cloudflare Pages serves from the **domain root**, `404.html`'s
 root-absolute paths stay correct. If the site is ever moved somewhere that
 serves it from a subpath, every leading `/` in `404.html` breaks.
 
-`.nojekyll` is a leftover from GitHub Pages and is harmless — Cloudflare
-ignores it. `robots.txt` and `sitemap.xml` still contain the old
-`jimbob893.github.io` URLs and **must be updated to the real domain** once
-it exists, along with the `<link rel="canonical">` tag in the five pages.
+**`.assetsignore` is load-bearing.** Cloudflare serves this repo's root, so
+anything not listed there is publicly fetchable at `/<filename>` — a private
+repo does not change that. CLAUDE.md was live on the internet until this file
+existed. If you add an internal doc, add it there too.
+
+**`wrangler.jsonc`** sets `not_found_handling: "404-page"`. Without it
+Cloudflare returns an empty body for unknown paths instead of `404.html`.
+
+`robots.txt`, `sitemap.xml` and the five `<link rel="canonical">` tags all
+point at the `workers.dev` URL. **If a custom domain is bought, all three must
+be updated** — a canonical pointing at the wrong host can deindex the site.
 
 ### Portfolio: demos, not clients
 

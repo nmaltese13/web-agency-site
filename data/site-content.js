@@ -15,13 +15,13 @@ const SITE = {
 
   /* ---------------------------------------------------------------------
      BUSINESS IDENTITY
-     PLACEHOLDER: business name is invented. Change `name` and `nameShort`
-     here and it updates across every page, the footer, and the <title>s
-     (titles are in the HTML — search/replace those separately, they're
-     static for SEO reasons).
+     The name is Nick's actual choice — no longer a placeholder. Changing it
+     here updates the header, footer and body copy on every page, but NOT the
+     six <title> tags, which are static markup for SEO. Search and replace
+     those separately if it ever changes again.
      --------------------------------------------------------------------- */
   business: {
-    name: 'Northampton Web Company',        // PLACEHOLDER
+    name: 'Maltese Web Works',
     owner: 'Nick',
     role: 'Web developer and automation builder',
     town: 'Northampton, PA',

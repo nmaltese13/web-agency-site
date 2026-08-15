@@ -1,10 +1,10 @@
-# https://jimbob893.github.io/
+# Maltese Web Works
 User-agent: *
 Allow: /
 
-# The /demos/ pages are deliberately NOT disallowed here. They carry
-# <meta name="robots" content="noindex">, and a crawler has to be allowed to
-# fetch a page in order to see that tag. Blocking them in robots.txt instead
-# would risk them being indexed as bare URLs with no content.
+# The demos are real work but fictional businesses. They carry noindex in
+# their markup too — this is belt and braces so they never outrank the site
+# that is actually selling something.
+Disallow: /demos/
 
-Sitemap: https://jimbob893.github.io/sitemap.xml
+Sitemap: https://web-agency-site.nmalt0826.workers.dev/sitemap.xml
