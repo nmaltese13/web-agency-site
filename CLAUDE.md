@@ -214,12 +214,16 @@ Still open, and only Nick can close these:
   isn't wired up yet and points at the contact form.
 - **Formspree endpoint** → `js/contact.js`. Until set, the form shows a
   truthful error and tells people to email. It never fake-succeeds.
-- **Business name** — "Northampton Web Co." is invented.
 - **Prices** — $900 / $450 / $1,200 are invented.
 - **Phone** — none published.
 
+The business name is settled: **Maltese Web Works**, real and in use across the
+site, `data/site-content.js`, and the outreach drafts.
+
 Cold-outreach drafts and the prospect list live in `outreach/`, which is
-**gitignored and must stay that way** — this repo is public.
+**committed on purpose** so it survives switching machines. That is only safe
+because the repo is private and `.assetsignore` keeps it off the public site —
+see "outreach/ is committed on purpose" below.
 
 ## Working across two machines
 
