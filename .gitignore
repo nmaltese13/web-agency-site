@@ -34,8 +34,15 @@ desktop.ini
 node_modules/
 package-lock.json
 
-# Sales/outreach working files — never commit. This repo will be public
-# when it deploys to GitHub Pages, and a prospect list plus the cold emails
-# that targeted them is not something to publish.
-outreach/*
-!outreach/CANARY.txt
+# outreach/ IS committed, deliberately.
+#
+# It was excluded when this repo was public. The repo is private now, and
+# committing it is the only way the prospect list survives switching between
+# the Mac and the desktop.
+#
+# It is kept OFF the public website by .assetsignore, not by this file.
+# Verified empirically: a canary file in outreach/ returned 404 on the live
+# site while a control file at the repo root served correctly.
+#
+# >> If you ever make this repo public again, outreach/ must come back out.
+#    It contains a home address and a list of businesses being solicited. <<

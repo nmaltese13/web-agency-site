@@ -1,0 +1,609 @@
+======================================================================
+MALTESE WEB WORKS - COLD OUTREACH
+10 prospects, verified 14 August 2026
+======================================================================
+
+Everything here was checked by hand, not guessed. Where I could not
+confirm something I have said so.
+
+YOUR DETAILS (already filled into every draft below)
+  Name     Nick Maltese
+  Business Maltese Web Works
+  Email    nmalt0826@gmail.com
+  Site     https://web-agency-site.nmalt0826.workers.dev
+  Demos    .../demos/auto-shop/     .../demos/electrician/
+  Address  63 Yeats Run, Northampton, PA 18067
+
+
+----------------------------------------------------------------------
+READ THIS BEFORE YOU SEND ANYTHING
+----------------------------------------------------------------------
+
+1. THE ADDRESS IS IN EVERY EMAIL AND IT HAS TO BE.
+   CAN-SPAM requires a real physical postal address in any cold
+   commercial email, along with a working opt-out and an honest
+   subject line. There is no compliant version without it.
+
+   You said you do not want physical mail. I cannot give you that AND
+   compliance using your home address - some recipients will add you
+   to lists. The fix is a USPS PO Box (about $25-40 for six months) at
+   the Northampton post office. Once you have one, replace
+   "63 Yeats Run" everywhere in this file. Until then this is your
+   home address going out to strangers, and you should decide that
+   knowingly rather than by accident.
+
+2. RE-CHECK THE ONE FACT YOU ARE CITING, RIGHT BEFORE YOU SEND.
+   These claims were true on 14 Aug 2026. Website facts go stale fast.
+   Telling a business their site is broken after they fixed it last
+   week is worse than not writing at all.
+
+   This is not theoretical. While writing this I checked Estevez
+   Electric twice and got two different answers - the second one was
+   wrong because I used a lazy request that the server answered
+   differently. Open the actual page in your actual phone browser.
+
+3. SEND ONE AT A TIME, FROM GMAIL, LIKE A PERSON.
+   Not a bulk tool. Not BCC. Five personal emails beat fifty blasted
+   ones, and a normal send from a normal address rarely gets filtered.
+
+4. YOUR PRICES ARE STILL MY INVENTION.
+   $900 / $450 / $1,200 are made up and are live on your site right
+   now. If someone replies asking "is $900 real?", you need an answer
+   you can stand behind. Decide before you send, not during a call.
+
+5. ONE FOLLOW-UP, THEN STOP.
+   Two is persistence. Three is how you get marked as spam.
+
+
+======================================================================
+TIER 1 - BROKEN RIGHT NOW. SEND THESE FIRST.
+======================================================================
+
+----------------------------------------------------------------------
+1. HARHART'S SERVICE STATION
+   13 E 21st St, Northampton PA 18067  ·  610-262-9111
+   3rd-generation family owned. Gas, repair, car wash, state
+   inspection. Roughly 5.0 stars across ~160 verified reviews.
+
+   VERIFIED: their website is entirely down. harhartsservice.com and
+   www.harhartsservice.com both land on a page titled "Account
+   Suspended - Harharts Service Station, Inc". I checked four URLs
+   Google still has indexed - the homepage, /contact,
+   /why-harharts-service-station and /auto-repairs-northampton-pa -
+   and every one redirects to the suspension page. Bare domain over
+   plain HTTP returns 522. Confirmed four separate times, most
+   recently 14 Aug 2026.
+
+   BEST PROSPECT ON THIS LIST. A busy, beloved, 3-generation business
+   whose entire web presence is a hosting error page.
+
+   >> CALL THEM, DON'T EMAIL. Their contact page is part of what's
+   >> down, so email may not reach anyone. 610-262-9111. Ask for
+   >> whoever handles the website. The whole pitch is two sentences:
+   >> "Your website is showing Account Suspended. I don't think you
+   >> know." Email below only if you find an address.
+----------------------------------------------------------------------
+
+SUBJECT: Your website is showing "Account Suspended"
+
+Hi - I'm Nick, I live in Northampton and I build websites for local
+businesses.
+
+I went to look up your hours this week and harhartsservice.com came up
+as "Account Suspended." It isn't just the homepage - your contact page
+and your service pages all land on the same notice. Google still lists
+them, so anyone searching for you is clicking through to that.
+
+My guess is a lapsed hosting bill rather than anything dramatic, and
+your host can probably switch it back on today. That's worth a phone
+call to them before anything else, and it costs you nothing.
+
+If the site turns out to be gone for good, or you'd rather not be one
+unpaid invoice away from being invisible again, I can rebuild it as a
+handful of static pages that cost near nothing to host and can't be
+suspended the same way. Here's one I built for a shop like yours:
+
+  https://web-agency-site.nmalt0826.workers.dev/demos/auto-shop/
+
+Open it on your phone. It's about 18KB - it loads instantly even on
+bad service in a garage bay.
+
+Three generations and 160-odd five-star reviews deserve better than a
+hosting company's error page. Either way, no charge for the heads up.
+I'm ten minutes up the road.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Don't want to hear from me again? Reply "no thanks" and I won't
+contact you.
+
+
+----------------------------------------------------------------------
+2. NORTHAMPTON PLUMBING, HEATING & COOLING
+   6900 Walnut St, Northampton PA 18067  ·  (610) 262-9000
+   Family owned, 45+ years. Currently reachable only via Facebook and
+   directory listings.
+
+   VERIFIED: northamptonphc.com shows "Coming Soon - We're under
+   construction." The domain was registered 7 May 2024 through
+   Squarespace and is paid up through May 2027. So they have been
+   paying for a domain, and probably a Squarespace plan, for over two
+   years without ever launching.
+
+   NOT FULLY CONFIRMED: that the domain is theirs. The name matches
+   exactly (PHC = Plumbing Heating Cooling, Northampton) and it is the
+   obvious candidate, but I could not prove ownership from public
+   records. Ask, don't assert - the email below is worded as a
+   question for that reason.
+----------------------------------------------------------------------
+
+SUBJECT: Is northamptonphc.com yours?
+
+Hi - I'm Nick, I build websites for small businesses here in
+Northampton.
+
+I was looking for your website and found northamptonphc.com, which has
+said "Coming Soon - we're under construction" for a while now. If
+that's yours: the domain was registered in May 2024 and it's paid up
+through 2027, so you've been carrying the cost of it for two years
+without a site behind it.
+
+If it isn't yours, ignore me entirely and sorry for the noise.
+
+If it is - that's the whole problem, and it's a common one. Somebody
+signs up, the build stalls because running a plumbing company is a
+full-time job, and the tab keeps running. Meanwhile 45 years of
+reputation is sitting on a Facebook page that doesn't show up when
+someone searches "plumber Northampton PA" at 9pm with a leak.
+
+I build these as plain static pages - fast, no monthly platform fee,
+and you own everything. Here's one for a trades business so you can
+see the shape of it:
+
+  https://web-agency-site.nmalt0826.workers.dev/demos/electrician/
+
+Worth twenty minutes on the phone? I'll tell you honestly whether it's
+worth doing at all - for some shops the answer is just fixing the
+Google listing, and that's a much cheaper conversation.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and I won't contact you again.
+
+
+======================================================================
+TIER 2 - A REAL, SPECIFIC DEFECT
+======================================================================
+
+----------------------------------------------------------------------
+3. ESTEVEZ ELECTRIC LLC
+   Licensed/insured electrical contractor. Northampton Borough, Bath,
+   Walnutport.  ·  estevezelectricllc.com
+
+   VERIFIED (three times, most recently 14 Aug 2026): the viewport tag
+   contains maximum-scale=1.0, user-scalable=0, which disables
+   pinch-to-zoom on phones. Footer copyright shows 2015. The homepage
+   <title> is "Home - Residential and Commercial Electrician" - no
+   business name, no town, which is what Google shows in results.
+   Page weight around 373KB.
+
+   NOTE: a plain automated request to this site gets a different
+   response than a real browser. Check it on your phone, not with a
+   tool.
+----------------------------------------------------------------------
+
+SUBJECT: Text won't zoom on your site (two-minute fix)
+
+Hi - I'm Nick, I build websites for small businesses around
+Northampton.
+
+Two things I noticed on estevezelectricllc.com, both small:
+
+The page blocks pinch-to-zoom on phones. If someone wants to make the
+text bigger to read your services or your number, they can't - it just
+won't respond. That's one line of code, usually left in by accident by
+whoever built it. It matters more than it sounds, because a good share
+of people hiring an electrician are over fifty and are going to try to
+zoom.
+
+The other is that your homepage title - the blue line Google shows in
+search results - reads "Home - Residential and Commercial Electrician."
+No business name, no town. Someone searching "electrician Bath PA"
+sees a generic line instead of "Estevez Electric."
+
+I'd fix the zoom one free. It's two minutes and I'm not invoicing
+anybody for two minutes. If you like how I work after that we can talk
+about the rest; if not, you keep the fix.
+
+Want me to just send you the exact line to hand to whoever maintains
+the site? Happy to do that instead if you'd rather not involve a
+stranger.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and I won't write again.
+
+
+----------------------------------------------------------------------
+4. J.O.N. CONSTRUCTION, INC.
+   Roofing and siding, Lehigh Valley / Allentown, serving Cementon,
+   Egypt and surrounding.  ·  jonroofingandsiding.com
+
+   VERIFIED 14 Aug 2026: same pinch-zoom block
+   (maximum-scale=1.0, user-scalable=0). Footer copyright reads 2018 -
+   eight years stale. WordPress.
+----------------------------------------------------------------------
+
+SUBJECT: Your site still says 2018 at the bottom
+
+Hi - I'm Nick, I build websites for local trades businesses. I'm in
+Northampton.
+
+Two things on jonroofingandsiding.com that a homeowner would notice
+before you would:
+
+The copyright line at the bottom still reads 2018. People genuinely
+use that as a "are these guys still in business" check - especially
+for roofing, where nobody wants to hand a deposit to a company that
+might have folded.
+
+And the page blocks pinch-to-zoom on phones, so anyone trying to
+enlarge the text to read it simply can't.
+
+Both are small fixes. The year is a one-line change and I'll tell you
+exactly where it is for free if you want to hand it to whoever built
+the site - no catch, I'd rather be the guy who helped than the guy who
+sent another sales email.
+
+If you want a bigger conversation, I build these as static sites that
+load in about a second on job-site data and have no monthly platform
+fee. Example:
+
+  https://web-agency-site.nmalt0826.workers.dev/demos/electrician/
+
+Twenty minutes on the phone if it's useful. If your season's full,
+just say so and I'll leave you be.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and that's the last you'll hear from me.
+
+
+----------------------------------------------------------------------
+5. ZIGGY'S ROOFS
+   Roofing, siding, gutters, emergency repair. Lehigh Valley.
+   ·  ziggysroofing.us
+
+   VERIFIED 14 Aug 2026: footer copyright 2022. WordPress homepage
+   around 166KB. Mobile-friendly otherwise - viewport is correct.
+   No online quote request or booking found.
+----------------------------------------------------------------------
+
+SUBJECT: Quote requests at 9pm
+
+Hi - I'm Nick, I build websites and small automations for local
+businesses. I'm up in Northampton.
+
+Your site's in decent shape, so this isn't a pitch to rebuild it. Two
+smaller things:
+
+The footer still says 2022. Homeowners use that as a rough "are they
+still around" signal, and for roofing that check matters more than
+most trades.
+
+Bigger one: there's no way to request a quote without calling. For
+emergency roof work that's fine - people call. But for the planned
+jobs, the ones worth real money, people shop in the evening. They look
+at three roofers at nine at night, and whoever lets them get a request
+in right then gets the first conversation. The other two get called
+only if the first one is slow.
+
+A quote request form that routes straight to your phone, plus an
+automatic "got it, I'll come back to you tomorrow" so nobody's left
+wondering - that's usually a few days' work and one flat fee, no
+monthly charge from me.
+
+Worth twenty minutes? I'll tell you straight if I don't think it'd
+earn its keep.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and I'll stop.
+
+
+======================================================================
+TIER 3 - THE SITE IS FINE. SELL AUTOMATION, NOT A REBUILD.
+======================================================================
+
+These five have current, working, mobile-friendly websites. Telling
+them their site is bad makes you sound like every other cold email
+they delete. What none of them have is a way to book or request a
+quote without picking up the phone. You're adding something, not
+criticising something - much easier sale.
+
+----------------------------------------------------------------------
+6. DAKU'S AUTO BODY SHOP
+   North Catasauqua  ·  dakuautobody.com
+   Family owned since 1948. Current site (copyright 2026),
+   mobile-friendly. No online estimate booking found.
+----------------------------------------------------------------------
+
+SUBJECT: Booking estimates without the phone tag
+
+Hi - I'm Nick, I build websites and small automations for businesses
+around Northampton.
+
+I'm not writing about your website. It's fine - current, works on a
+phone, says what you do. That's more than most shops I look at.
+
+The one thing I couldn't find is a way to book an estimate without
+calling. For collision work that's the whole front door: somebody has
+just been in an accident, they're standing in a parking lot on their
+phone, and they'd rather tap a time than talk to anyone. If you're
+closed when they look, they call the next shop.
+
+I set up booking pages that sit on your real calendar, plus a text
+reminder the day before so people actually turn up. Few days' work,
+one flat fee, no monthly charge from me.
+
+Worth twenty minutes on the phone? I'm local, and I'll tell you
+straight if I don't think it'd pay for itself at your size.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and that's the last you'll hear from me.
+
+
+----------------------------------------------------------------------
+7. MASON LANDSCAPING
+   Allentown / Bethlehem / Easton / Nazareth  ·  yourmasonlawn.com
+   In business since 2007. WordPress, mobile-friendly, no copyright
+   year in the footer. No online quote request found.
+----------------------------------------------------------------------
+
+SUBJECT: Quote requests while you're on a job
+
+Hi - I'm Nick, I build websites and small automations for local
+businesses. I'm in Northampton.
+
+Your site looks good, so this isn't a pitch to rebuild it. The gap I
+noticed is there's no way to request a quote online - it's call or
+nothing.
+
+For landscaping that's a real leak, because people shop for you in the
+evening. They look at three companies at eight at night, and whoever
+lets them get a request in right then gets the first conversation.
+
+A quote request form that routes straight to your phone, and an
+automatic "got it, I'll be back to you tomorrow" so nobody's left
+wondering - that's usually a few days of work and one flat fee.
+
+Twenty minutes on the phone if you're interested. If your season's
+already full, tell me and I'll leave you alone.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and I won't write again.
+
+
+----------------------------------------------------------------------
+8. BLUE MOUNTAIN EVERGREEN
+   Landscape products, hardscaping, hydroseeding. Lehigh Valley since
+   1986.  ·  bluemountainevergreen.com
+   WordPress, mobile-friendly, copyright 2025. No booking found.
+----------------------------------------------------------------------
+
+SUBJECT: One thing missing from bluemountainevergreen.com
+
+Hi - I'm Nick. I build websites and small automations for local
+businesses, and I'm based in Northampton.
+
+Forty years in business in this valley is not an accident, so I'll
+keep this short. Your site does its job. The only thing I couldn't
+find is a way to book a consultation or get a quote request in without
+calling during business hours.
+
+For hardscaping especially - where somebody's been thinking about a
+patio for two years and finally sits down on a Sunday to do something
+about it - that's the moment you want to catch.
+
+That's a booking page on your real calendar and an automatic reply so
+nothing sits unanswered. Few days' work, flat fee, no monthly anything
+from me.
+
+Twenty minutes on the phone and I'll tell you honestly whether it's
+worth doing.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and I'll stop.
+
+
+----------------------------------------------------------------------
+9. LEHIGH GAP EXTERIORS
+   Roofing, siding, gutters, windows, doors. Walnutport showroom.
+   Family-owned since 2005.  ·  lehighgap.com
+   Current site, copyright 2026, mobile-friendly, hand-built rather
+   than a template. No online booking found.
+----------------------------------------------------------------------
+
+SUBJECT: Booking showroom visits online
+
+Hi - I'm Nick, I build websites and small automations for local
+businesses. I'm in Northampton, twenty minutes from your Walnutport
+showroom.
+
+Your site is genuinely well put together - I looked at a dozen
+contractor sites this week and yours is in the top two. So this isn't
+a rebuild pitch.
+
+The gap: there's no way to book a showroom visit or a measure
+appointment online. For exterior work where people want to see and
+touch the materials, getting somebody to commit to a specific time
+while they're still interested is most of the battle. Right now that
+requires a phone call during business hours, which loses you the
+evening browsers.
+
+A booking page on your real calendar, plus an automatic reminder the
+day before so no-shows drop - few days' work, one flat fee, no monthly
+charge from me.
+
+Twenty minutes on the phone if it's useful.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and I won't contact you again.
+
+
+----------------------------------------------------------------------
+10. ANDREAS PLUMBING, HEATING & AIR CONDITIONING
+    Northampton and Coplay service area  ·  andreasplumbing.com
+    ·  610-885-8300
+    Family owned, four generations. 24/7 emergency service. Current
+    site, copyright 2026, mobile-friendly. No online booking found.
+
+    NOTE: they're bigger than your other prospects and may already
+    have someone doing this. Lowest-probability email on the list -
+    send it last, and don't be discouraged by silence.
+----------------------------------------------------------------------
+
+SUBJECT: Booking the non-emergency work
+
+Hi - I'm Nick, I build websites and small automations for local
+businesses here in Northampton.
+
+Your site's current and works properly on a phone, so I'm not writing
+about that.
+
+The thing I noticed: everything routes to a phone call. That's exactly
+right for the 2am burst pipe. But for the scheduled work - water
+heater replacements, seasonal service, the stuff people plan - a lot
+of customers would rather pick a slot at nine at night than call and
+explain themselves.
+
+A booking page for scheduled work only, sitting on your real calendar,
+with a text reminder the day before to cut no-shows. Leaves emergency
+calls exactly as they are.
+
+Few days' work, one flat fee, no monthly charge from me. Twenty
+minutes on the phone if it's worth a conversation - and if you've
+already got someone handling this, just say so and I'll leave you be.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and I won't write again.
+
+
+======================================================================
+CHECKED AND DELIBERATELY SKIPPED
+======================================================================
+
+TIM'S AUTO REPAIR - Northampton  ·  timsautorepair.net
+I went in expecting a prospect and it's genuinely well built: proper
+page title, a real meta description with their phone number and
+services, correct viewport, HTTPS working on both bare and www
+domains. There is nothing honest to offer them. Don't waste the send.
+
+Being able to say "I checked yours and it's fine" is worth something
+if you ever meet them. Don't manufacture a problem to have a reason
+to write.
+
+
+======================================================================
+THE FOLLOW-UP
+======================================================================
+
+One, about a week later, same thread. Then stop.
+
+The address and opt-out are here too, and they aren't optional. A
+follow-up is still a commercial email - CAN-SPAM applies to every
+message, not just the first one in a thread.
+
+SUBJECT: Re: [keep the original subject so it stays in the same thread]
+
+Hi - following up once on the note below, then I'll leave you be.
+
+Offer stands if it's useful. If it isn't, no hard feelings at all -
+I'd rather you tell me to get lost than wonder.
+
+Nick Maltese
+Maltese Web Works · Northampton, PA
+nmalt0826@gmail.com
+https://web-agency-site.nmalt0826.workers.dev
+63 Yeats Run, Northampton, PA 18067
+
+Reply "no thanks" and I won't contact you again.
+
+
+======================================================================
+FINDING THE NEXT BATCH YOURSELF
+======================================================================
+
+What actually worked for this list: Google Maps for a trade plus a
+town, then open each result's website on your phone. Rank what you
+find:
+
+  BEST   "Account Suspended" / "This site can't be reached" /
+         "Coming Soon" that's been up for years. A working business
+         with a dead or unbuilt site. Two of the ten above.
+
+  GOOD   No website at all - just a Google listing or Facebook page.
+         Highest value, but you'll have to call or walk in; there's
+         usually no email address published.
+
+  GOOD   Text you can't pinch to zoom, or a page that loads at
+         desktop width and makes you scroll sideways.
+
+  OK     A copyright year three or more years old in the footer.
+
+  OK     No way to book or request a quote without calling. Most
+         common gap by far, and the easiest sale because you're
+         adding something rather than criticising something.
+
+Write down the specific thing and the date you checked it. One true
+specific observation beats three paragraphs about your services.
+
+Nobody enjoys being told their website is ugly. Being told it's
+BROKEN, by a neighbour, with the fix included - that's a completely
+different conversation, and it's the only reason any of these emails
+have a chance.
