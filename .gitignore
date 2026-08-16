@@ -37,4 +37,5 @@ package-lock.json
 # Sales/outreach working files — never commit. This repo will be public
 # when it deploys to GitHub Pages, and a prospect list plus the cold emails
 # that targeted them is not something to publish.
-outreach/
+outreach/*
+!outreach/CANARY.txt

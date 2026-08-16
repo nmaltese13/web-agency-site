@@ -1,0 +1,3 @@
+Harmless test file. If this is reachable on the public site, then
+.assetsignore does NOT exclude the outreach/ directory, and the real
+prospect file must never be committed. Contains no real data.
