@@ -221,6 +221,68 @@ Still open, and only Nick can close these:
 Cold-outreach drafts and the prospect list live in `outreach/`, which is
 **gitignored and must stay that way** — this repo is public.
 
+## Working across two machines
+
+Nick works on a MacBook and a desktop. The repo is the only thing that moves
+between them — there is no other sync.
+
+**Starting work on a machine:**
+
+```bash
+cd ~/Desktop/web-agency-site   # or wherever it lives on that machine
+git pull                       # ALWAYS do this first
+```
+
+**Finishing, every time, even mid-task:**
+
+```bash
+git add -A
+git commit -m "what changed"
+git push
+```
+
+Pushing is also the deploy — Cloudflare rebuilds from `main` within about a
+minute. There is no separate deploy step.
+
+**First time on a new machine:**
+
+```bash
+git clone https://github.com/Jimbob893/web-agency-site.git
+cd web-agency-site
+python3 -m http.server 8000
+```
+
+**If `git pull` reports a conflict**, it means the same file was edited on
+both machines without pushing in between. Nothing is lost — the old version
+is still in the history. Ask Claude to sort it out rather than guessing.
+
+### outreach/ is committed on purpose — and is the risky part
+
+`outreach/EMAILS-TO-SEND.txt` contains Nick's **home address** and a list of
+real businesses being cold-emailed. It is committed so it survives the switch
+between machines, which is only safe because:
+
+1. the GitHub repo is **private**, and
+2. `.assetsignore` keeps the directory out of the Cloudflare asset upload.
+
+Point 2 is the only thing standing between that file and the open internet,
+because Cloudflare serves the repo root. **Do not delete or reorder
+`.assetsignore`.** After any change to it, or to `wrangler.jsonc`, re-verify:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}\n" \
+  https://web-agency-site.nmalt0826.workers.dev/outreach/EMAILS-TO-SEND.txt
+# 404 = correct. 200 = a home address is public; fix it immediately.
+```
+
+Verify by *deploying a canary and a control together* — a 404 alone can just
+mean the deploy hasn't finished yet. Serve a control file from the repo root
+in the same commit and wait until the control appears; only then does the
+canary's 404 prove exclusion.
+
+If the repo is ever made public again, `outreach/` must be removed from it
+first.
+
 ## Commit convention
 
 Commit after every stage. The owner has lost this project once already to
