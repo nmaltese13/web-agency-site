@@ -74,11 +74,27 @@
     }
 
     if (!isConfigured) {
-      setStatus(
-        'error',
-        'This form isn’t connected to its mail service yet. ' +
-        'Email me directly in the meantime — the address is in the footer.'
-      );
+      var name = form.elements['name'] ? form.elements['name'].value.trim() : '';
+      var business = form.elements['business'] ? form.elements['business'].value.trim() : '';
+      var email = form.elements['email'] ? form.elements['email'].value.trim() : '';
+      var phone = form.elements['phone'] ? form.elements['phone'].value.trim() : '';
+      var topic = form.elements['topic'] ? form.elements['topic'].value : '';
+      var message = form.elements['message'] ? form.elements['message'].value.trim() : '';
+
+      var subject = 'Project inquiry' + (business ? ' — ' + business : '');
+      var body = [
+        'Name: ' + name,
+        'Business: ' + (business || '—'),
+        'Email: ' + email,
+        'Phone: ' + (phone || '—'),
+        'Need: ' + topic,
+        '',
+        message
+      ].join('\n');
+
+      window.location.href =
+        'mailto:nmalt0826@gmail.com?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
       return;
     }
 
